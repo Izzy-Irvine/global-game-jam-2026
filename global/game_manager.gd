@@ -12,6 +12,7 @@ var saved_checkpoint = game_state
 
 signal changed_mask(mask: Types.Mask)
 
+signal reload_state()
 
 func change_mask(new_mask: Types.Mask):
 	game_state.current_mask = new_mask
@@ -21,9 +22,22 @@ func change_mask(new_mask: Types.Mask):
 func pickup_mask(new_mask: Types.Mask):
 	game_state.masks_collected.append(new_mask)
 	change_mask(new_mask)
-	
+
+func save_object_state(object, state):
+	game_state.object_states[object] = state
+
 func death():
 	print("You died!")
+	print("Reloading state: " + str(saved_checkpoint.object_states))
+	game_state = saved_checkpoint.copy()
+	reload_state.emit()
+	
+func save_checkpoint():
+	print("Saving state: " + str(game_state.object_states))
+	saved_checkpoint = game_state.copy()
+
+func _ready():
+	call_deferred("save_checkpoint")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
