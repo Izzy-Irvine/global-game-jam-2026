@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://dnmfnjnx8etk5"]
 
+[ext_resource type="PackedScene" uid="uid://dqaj8q0uipms3" path="res://models/platform/platform.tscn" id="1_56qw4"]
 [ext_resource type="PackedScene" uid="uid://b06f2whwfjsas" path="res://characters/player/player.tscn" id="1_tbgih"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgih"]
-size = Vector2(736, 183)
-
 [node name="DebugLevel" type="Node2D" unique_id=185633665]
+
+[node name="Platform 2" parent="." unique_id=94554135 instance=ExtResource("1_56qw4")]
+position = Vector2(482, -64)
+
+[node name="Starting Platform" parent="." unique_id=631109881 instance=ExtResource("1_56qw4")]
 
 [node name="Player" parent="." unique_id=1439820102 instance=ExtResource("1_tbgih")]
 position = Vector2(-28, -88)
@@ -19,15 +22,3 @@ limit_bottom = 500
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_bottom_margin = 0.1
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=250314927]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1338635320]
-position = Vector2(275, 127)
-shape = SubResource("RectangleShape2D_tbgih")
-
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1630153607]
-offset_left = -93.0
-offset_top = 36.0
-offset_right = 646.0
-offset_bottom = 220.0
