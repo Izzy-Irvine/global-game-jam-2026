@@ -17,6 +17,13 @@ func _ready():
 	
 func _on_mask_changed(mask):
 	rect.color = MASK_COLOURS[mask]
+	match mask:
+		GameManager.Mask.NONE:
+			collision_mask = 1
+		GameManager.Mask.BLUE:
+			collision_mask = 3
+		GameManager.Mask.GREEN:
+			collision_mask = 5
 	
 
 func _physics_process(delta: float) -> void:

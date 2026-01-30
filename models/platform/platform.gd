@@ -21,16 +21,19 @@ func _ready() -> void:
 func _update_platform():
 	if not is_inside_tree():
 		return
+	
 	$StaticBody2D/ColorRect.size = size
 	$StaticBody2D/ColorRect.position = Vector2(-size.x / 2, -size.y / 2)
-	print(platform_type)
 	
 	match platform_type:
 		"None":
+			$StaticBody2D.collision_layer = 1
 			$StaticBody2D/ColorRect.color = Color.WHITE
 		"Blue":
+			$StaticBody2D.collision_layer = 2
 			$StaticBody2D/ColorRect.color = Color.BLUE
 		"Green":
+			$StaticBody2D.collision_layer = 4
 			$StaticBody2D/ColorRect.color = Color.GREEN
 	
 	shape.size = size
