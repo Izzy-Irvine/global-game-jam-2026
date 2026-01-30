@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://b32lwepbwtb10" path="res://tools/ground_tile_map.gd" id="5_6leoi"]
 [ext_resource type="Script" uid="uid://c4r5ca16fd3th" path="res://tools/ground_tile_set.gd" id="6_n1bhp"]
 [ext_resource type="PackedScene" uid="uid://dd8h86grprhrw" path="res://models/checkpoint/checkpoint.tscn" id="8_t8hds"]
+[ext_resource type="PackedScene" uid="uid://don34sck1x8d1" path="res://models/killzone/killzone.tscn" id="9_1ycwy"]
 
 [sub_resource type="Resource" id="Resource_b47vy"]
 script = ExtResource("6_n1bhp")
@@ -25,7 +26,7 @@ position = Vector2(28, 88)
 limit_left = -10000020
 limit_top = -9999454
 limit_right = 9999980
-limit_bottom = 500
+limit_bottom = 300
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_bottom_margin = 0.1
@@ -78,3 +79,6 @@ position = Vector2(672, 71)
 
 [node name="Spikes3" parent="." unique_id=1556856508 instance=ExtResource("2_b47vy")]
 position = Vector2(1321, 49)
+
+[node name="Killzone" parent="." unique_id=1273359383 instance=ExtResource("9_1ycwy")]
+position = Vector2(0, 300)
