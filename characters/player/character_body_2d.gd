@@ -1,9 +1,30 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+@onready var rect = $ColorRect
+
+const MASK_COLOURS = {
+	GameManager.Mask.NONE: "#aaaaaa",
+	GameManager.Mask.BLUE: "#0000ff",
+	GameManager.Mask.GREEN: "#00ff00"
+}
+
+
+func _ready():
+	GameManager.changed_mask.connect(_on_mask_changed)
+	
+func _on_mask_changed(mask):
+	rect.color = MASK_COLOURS[mask]
+	match mask:
+		GameManager.Mask.NONE:
+			collision_mask = 1
+		GameManager.Mask.BLUE:
+			collision_mask = 3
+		GameManager.Mask.GREEN:
+			collision_mask = 5
+	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
