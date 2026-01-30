@@ -16,6 +16,20 @@ metadata/_custom_type_script = "uid://c4r5ca16fd3th"
 [node name="DebugLevel" type="Node2D" unique_id=185633665]
 script = ExtResource("1_p36ab")
 
+[node name="Player" parent="." unique_id=1439820102 instance=ExtResource("1_tbgih")]
+z_index = 100
+position = Vector2(-27, -73)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=388228214]
+position = Vector2(28, 88)
+limit_left = -10000020
+limit_top = -9999454
+limit_right = 9999980
+limit_bottom = 500
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_bottom_margin = 0.1
+
 [node name="Spikes" parent="." unique_id=1017898397 instance=ExtResource("2_b47vy")]
 position = Vector2(-159, 126)
 
@@ -39,19 +53,6 @@ size = Vector2(200, 100)
 position = Vector2(628, 137)
 collision_layer = 2
 platform_type = 1
-
-[node name="Player" parent="." unique_id=1439820102 instance=ExtResource("1_tbgih")]
-position = Vector2(-27, -73)
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=388228214]
-position = Vector2(28, 88)
-limit_left = -10000020
-limit_top = -9999454
-limit_right = 9999980
-limit_bottom = 500
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_bottom_margin = 0.1
 
 [node name="TileMap" type="Node2D" parent="." unique_id=969191371]
 script = ExtResource("5_6leoi")
