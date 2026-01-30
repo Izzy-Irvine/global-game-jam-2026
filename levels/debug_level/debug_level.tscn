@@ -11,7 +11,7 @@ position = Vector2(-124, 29)
 
 [node name="Platform 2" parent="." unique_id=94554135 instance=ExtResource("1_56qw4")]
 position = Vector2(313, 38)
-platform_type = "Green"
+platform_type = "Red"
 
 [node name="Starting Platform" parent="." unique_id=631109881 instance=ExtResource("1_56qw4")]
 position = Vector2(-37, 115)

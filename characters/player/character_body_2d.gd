@@ -8,7 +8,7 @@ const JUMP_VELOCITY = -400.0
 const MASK_COLOURS = {
 	GameManager.Mask.NONE: "#aaaaaa",
 	GameManager.Mask.BLUE: "#0000ff",
-	GameManager.Mask.GREEN: "#00ff00"
+	GameManager.Mask.RED: "#ff0000"
 }
 
 
@@ -22,7 +22,7 @@ func _on_mask_changed(mask):
 			collision_mask = 1
 		GameManager.Mask.BLUE:
 			collision_mask = 3
-		GameManager.Mask.GREEN:
+		GameManager.Mask.RED:
 			collision_mask = 5
 	
 

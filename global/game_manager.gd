@@ -3,13 +3,13 @@ extends Node
 enum Mask {
 	NONE,
 	BLUE,
-	GREEN
+	RED
 }
 
 const MASK_KEY_MAPPING = {
 	"mask1": Mask.NONE,
 	"mask2": Mask.BLUE,
-	"mask3": Mask.GREEN
+	"mask3": Mask.RED
 }
 
 var current_mask: Mask = Mask.NONE

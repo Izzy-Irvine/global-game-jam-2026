@@ -1,7 +1,7 @@
 @tool
 extends Node2D
 
-@export_enum("None", "Blue", "Green") var platform_type := "None":
+@export_enum("None", "Blue", "Red") var platform_type := "None":
 	set(value):
 		platform_type = value
 		_update_platform()
@@ -32,8 +32,8 @@ func _update_platform():
 		"Blue":
 			$StaticBody2D.collision_layer = 2
 			$StaticBody2D/ColorRect.color = Color.BLUE
-		"Green":
+		"Red":
 			$StaticBody2D.collision_layer = 4
-			$StaticBody2D/ColorRect.color = Color.GREEN
+			$StaticBody2D/ColorRect.color = Color.RED
 	
 	shape.size = size
