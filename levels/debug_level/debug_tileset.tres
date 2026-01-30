@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GroundTileSet" format=3 uid="uid://npr7qgcripv0"]
+
+[ext_resource type="Script" uid="uid://c4r5ca16fd3th" path="res://tools/ground_tile_set.gd" id="1_txll0"]
+
+[resource]
+script = ExtResource("1_txll0")
+none_tiles_path = "res://sprites/Ground/NONE/"
+blue_tiles_path = "res://sprites/Ground/BLUE/"
+red_tiles_path = "res://sprites/Ground/RED/"
+black_tiles_path = "res://sprites/Ground/BLACK/"
+metadata/_custom_type_script = "uid://c4r5ca16fd3th"
