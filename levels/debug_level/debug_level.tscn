@@ -3,23 +3,31 @@
 [ext_resource type="PackedScene" uid="uid://b06f2whwfjsas" path="res://characters/player/player.tscn" id="1_tbgih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgih"]
-size = Vector2(182, 183)
+size = Vector2(736, 183)
 
 [node name="DebugLevel" type="Node2D" unique_id=185633665]
 
 [node name="Player" parent="." unique_id=1439820102 instance=ExtResource("1_tbgih")]
-position = Vector2(240, -123)
+position = Vector2(-28, -88)
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1024240808]
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=388228214]
+position = Vector2(28, 88)
+limit_left = -10000020
+limit_top = -9999454
+limit_right = 9999980
+limit_bottom = 500
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_bottom_margin = 0.1
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1819140314]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=250314927]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1338635320]
-position = Vector2(267, 110.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1338635320]
+position = Vector2(275, 127)
 shape = SubResource("RectangleShape2D_tbgih")
 
-[node name="ColorRect" type="ColorRect" parent="Area2D" unique_id=1630153607]
-offset_left = 175.0
-offset_top = 18.0
-offset_right = 357.0
-offset_bottom = 202.0
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1630153607]
+offset_left = -93.0
+offset_top = 36.0
+offset_right = 646.0
+offset_bottom = 220.0
