@@ -8,6 +8,8 @@ const MASK_KEY_MAPPING = {
 
 var game_state = GameState.new()
 
+var saved_checkpoint = game_state
+
 signal changed_mask(mask: Types.Mask)
 
 
@@ -19,6 +21,9 @@ func change_mask(new_mask: Types.Mask):
 func pickup_mask(new_mask: Types.Mask):
 	game_state.masks_collected.append(new_mask)
 	change_mask(new_mask)
+	
+func death():
+	print("You died!")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

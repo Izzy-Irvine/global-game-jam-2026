@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dqaj8q0uipms3" path="res://models/platform/platform.tscn" id="1_56qw4"]
 [ext_resource type="Script" path="res://levels/debug_level/debug_level.gd" id="1_p36ab"]
 [ext_resource type="PackedScene" uid="uid://b06f2whwfjsas" path="res://characters/player/player.tscn" id="1_tbgih"]
+[ext_resource type="PackedScene" uid="uid://davo0c0fdewl3" path="res://models/spikes/spikes.tscn" id="2_b47vy"]
 [ext_resource type="PackedScene" uid="uid://bntq3mab78kup" path="res://models/mask/mask.tscn" id="4_6leoi"]
 [ext_resource type="Script" uid="uid://b32lwepbwtb10" path="res://tools/ground_tile_map.gd" id="5_6leoi"]
 [ext_resource type="Script" uid="uid://c4r5ca16fd3th" path="res://tools/ground_tile_set.gd" id="6_n1bhp"]
@@ -14,6 +15,9 @@ metadata/_custom_type_script = "uid://c4r5ca16fd3th"
 [node name="DebugLevel" type="Node2D" unique_id=185633665]
 script = ExtResource("1_p36ab")
 
+[node name="Spikes" parent="." unique_id=1017898397 instance=ExtResource("2_b47vy")]
+position = Vector2(-410, 255)
+
 [node name="Mask" parent="." unique_id=1188811355 instance=ExtResource("4_6leoi")]
 position = Vector2(-124, 29)
 
@@ -23,15 +27,15 @@ mask = 2
 
 [node name="Platform 2" parent="." unique_id=94554135 instance=ExtResource("1_56qw4")]
 position = Vector2(313, 38)
+collision_layer = 2
 platform_type = 1
 
 [node name="Starting Platform" parent="." unique_id=631109881 instance=ExtResource("1_56qw4")]
 position = Vector2(-37, 115)
-platform_type = 0
 size = Vector2(200, 100)
 
 [node name="Player" parent="." unique_id=1439820102 instance=ExtResource("1_tbgih")]
-position = Vector2(-28, -88)
+position = Vector2(-27, -73)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=388228214]
 position = Vector2(28, 88)
