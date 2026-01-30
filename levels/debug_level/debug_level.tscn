@@ -2,8 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://dqaj8q0uipms3" path="res://models/platform/platform.tscn" id="1_56qw4"]
 [ext_resource type="PackedScene" uid="uid://b06f2whwfjsas" path="res://characters/player/player.tscn" id="1_tbgih"]
+[ext_resource type="PackedScene" uid="uid://bntq3mab78kup" path="res://models/mask/mask.tscn" id="4_6leoi"]
 
 [node name="DebugLevel" type="Node2D" unique_id=185633665]
+
+[node name="Mask" parent="." unique_id=1188811355 instance=ExtResource("4_6leoi")]
+position = Vector2(-124, 29)
 
 [node name="Platform 2" parent="." unique_id=94554135 instance=ExtResource("1_56qw4")]
 position = Vector2(313, 38)

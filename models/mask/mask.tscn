@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bntq3mab78kup"]
+
+[ext_resource type="Script" uid="uid://uwrywv3omjlv" path="res://models/mask/mask.gd" id="1_epmsv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_epmsv"]
+radius = 16.03122
+
+[node name="Mask" type="Area2D" unique_id=1188811355]
+collision_layer = 0
+script = ExtResource("1_epmsv")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=339433766]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(0, 0, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1161243038]
+shape = SubResource("CircleShape2D_epmsv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
