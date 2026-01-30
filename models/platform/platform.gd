@@ -11,7 +11,11 @@ extends Node2D
 		size = value
 		_update_platform()
 
+var shape: Shape2D = RectangleShape2D.new()
+
 func _ready() -> void:
+	shape.size = size
+	$StaticBody2D/CollisionShape2D.shape = shape
 	_update_platform()
 
 func _update_platform():
@@ -29,4 +33,4 @@ func _update_platform():
 		"Green":
 			$StaticBody2D/ColorRect.color = Color.GREEN
 	
-	$StaticBody2D/CollisionShape2D.shape.size = size
+	shape.size = size
