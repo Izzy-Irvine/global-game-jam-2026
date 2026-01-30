@@ -7,7 +7,7 @@ const TILE_POSITIONS = [
 	"Bottom_Left", "Bottom_Center", "Bottom_Right"
 ]
 
-@export var tile_size: int = 64
+@export var tile_size: int = 32
 
 @export_dir var none_tiles_path: String = "res://sprites/Ground/NONE/"
 @export_dir var blue_tiles_path: String = "res://sprites/Ground/BLUE/"
