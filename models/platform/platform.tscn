@@ -1,18 +1,27 @@
 [gd_scene format=3 uid="uid://dqaj8q0uipms3"]
 
+[ext_resource type="Script" uid="uid://dtmvmy6rbdlel" path="res://models/platform/platform.gd" id="1_7ibc5"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atoiu"]
-size = Vector2(461, 77.5)
+size = Vector2(300, 100)
 
 [node name="Platform" type="Node2D" unique_id=94554135]
+script = ExtResource("1_7ibc5")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1092624744]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=712743159]
-position = Vector2(-1.5, 0.75)
 shape = SubResource("RectangleShape2D_atoiu")
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1536425327]
-offset_left = -232.0
-offset_top = -39.0
-offset_right = 232.0
-offset_bottom = 41.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -50.0
+offset_right = 150.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
