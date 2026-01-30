@@ -67,7 +67,7 @@ func _ready() -> void:
 		if has_node("/root/GameManager"):
 			var gm = get_node("/root/GameManager")
 			gm.changed_mask.connect(_on_mask_changed)
-			_current_mask = gm.current_mask
+			_current_mask = gm.game_state.current_mask
 	
 	_ensure_tile_data()
 	_rebuild_tiles()

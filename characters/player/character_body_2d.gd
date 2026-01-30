@@ -1,14 +1,14 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 400.0
+const JUMP_VELOCITY = -500.0
 
 @onready var rect = $ColorRect
 
 const MASK_COLOURS = {
-	GameManager.Mask.NONE: "#aaaaaa",
-	GameManager.Mask.BLUE: "#0000ff",
-	GameManager.Mask.RED: "#ff0000"
+	Types.Mask.NONE: "#aaaaaa",
+	Types.Mask.BLUE: "#0000ff",
+	Types.Mask.RED: "#ff0000"
 }
 
 
@@ -18,11 +18,11 @@ func _ready():
 func _on_mask_changed(mask):
 	rect.color = MASK_COLOURS[mask]
 	match mask:
-		GameManager.Mask.NONE:
+		Types.Mask.NONE:
 			collision_mask = 1
-		GameManager.Mask.BLUE:
+		Types.Mask.BLUE:
 			collision_mask = 3
-		GameManager.Mask.RED:
+		Types.Mask.RED:
 			collision_mask = 5
 	
 

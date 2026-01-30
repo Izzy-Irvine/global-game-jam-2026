@@ -1,24 +1,18 @@
 extends Node
 
-enum Mask {
-	NONE,
-	BLUE,
-	RED
-}
-
 const MASK_KEY_MAPPING = {
-	"mask1": Mask.NONE,
-	"mask2": Mask.BLUE,
-	"mask3": Mask.RED
+	"mask1": Types.Mask.NONE,
+	"mask2": Types.Mask.BLUE,
+	"mask3": Types.Mask.RED
 }
 
-var current_mask: Mask = Mask.NONE
+var game_state = GameState.new()
 
-signal changed_mask(mask: Mask)
+signal changed_mask(mask: Types.Mask)
 
 
-func change_state(new_mask: Mask):
-	current_mask = new_mask
+func change_state(new_mask: Types.Mask):
+	game_state.current_mask = new_mask
 	print("changed to " + str(new_mask))
 	changed_mask.emit(new_mask)
 
@@ -26,6 +20,6 @@ func change_state(new_mask: Mask):
 func _process(delta: float) -> void:
 	for key in MASK_KEY_MAPPING:
 		var mask = MASK_KEY_MAPPING[key]
-		if Input.is_action_just_pressed(key) and current_mask != mask:
+		if Input.is_action_just_pressed(key) and game_state.current_mask != mask:
 			change_state(mask)
 		
