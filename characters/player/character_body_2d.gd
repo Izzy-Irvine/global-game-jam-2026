@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
-const SPEED = 400.0
+const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 
-@onready var rect = $ColorRect
+var facing_direction = 1
+
+@onready var animation = $Animation
 
 const MASK_COLOURS = {
 	Types.Mask.NONE: "#aaaaaa",
@@ -31,7 +33,7 @@ func _on_reload_state():
 	
 
 func update_mask(mask):
-	rect.color = MASK_COLOURS[mask]
+	#rect.color = MASK_COLOURS[mask]
 	match mask:
 		Types.Mask.NONE:
 			collision_mask = 1
@@ -53,9 +55,22 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
+		facing_direction = direction
 		velocity.x = direction * SPEED
+		if direction < 0:
+			animation.play("walk_left")
+		else:
+			animation.play("walk_right")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+		if facing_direction < 0:
+			animation.play("idle_left")
+		else:
+			animation.play("idle_right")
+			
+		
+		
 
 	move_and_slide()
 	save_state()
