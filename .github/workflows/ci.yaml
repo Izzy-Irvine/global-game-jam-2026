@@ -19,10 +19,7 @@ jobs:
           use-dotnet: false
       
       - name: Build
-        run: |
-          mkdir -p $BUILD_PATH
-          rm -rf $BUILD_PATH/*
-          godot --headless --verbose --export-release "Web" "export/index.html"
+        run: godot --headless --verbose --export-release "Web" "export/index.html"
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
