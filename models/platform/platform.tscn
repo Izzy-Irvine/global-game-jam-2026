@@ -8,7 +8,6 @@ size = Vector2(64, 32)
 
 [node name="Platform" type="StaticBody2D" unique_id=1316275024]
 script = ExtResource("1_7ibc5")
-size_x = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=712743159]
 shape = SubResource("RectangleShape2D_osfsy")
