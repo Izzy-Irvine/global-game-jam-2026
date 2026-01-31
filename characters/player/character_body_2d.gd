@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 400.0
 const JUMP_VELOCITY = -500.0
 
-@onready var rect = $ColorRect
+@onready var animation = $Animation
 
 const MASK_COLOURS = {
 	Types.Mask.NONE: "#aaaaaa",
@@ -31,7 +31,7 @@ func _on_reload_state():
 	
 
 func update_mask(mask):
-	rect.color = MASK_COLOURS[mask]
+	#rect.color = MASK_COLOURS[mask]
 	match mask:
 		Types.Mask.NONE:
 			collision_mask = 1
@@ -54,8 +54,14 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
+		if direction < 0:
+			animation.play("walk_left")
+		else:
+			animation.play("walk_right")
+				
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
 
 	move_and_slide()
 	save_state()
