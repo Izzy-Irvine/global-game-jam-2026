@@ -1,13 +1,14 @@
 extends CharacterBody2D
 
-const SPEED = 250.0
-const JUMP_VELOCITY = -450.0
+const SPEED = 400.0
+const JUMP_VELOCITY = -550.0
 const TERMINAL_VELOCITY = -600
-const GRAVITY = 3500.0
+const GRAVITY = 3800.0
 
 var facing_direction = "right"
 var jump_held_duration = 0
 var is_jumping = false
+var time_in_air = 0
 
 @onready var animation = $Animation
 
@@ -55,16 +56,18 @@ func jump():
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if is_on_floor():
+		time_in_air = 0
 		if jump_held_duration < 0.1 and jump_held_duration > 0:
 			jump()
 	else:
+		time_in_air += delta
 		velocity.y += GRAVITY * delta
 		if velocity.y < TERMINAL_VELOCITY:
 			velocity.y = TERMINAL_VELOCITY 
 	
 	
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		if is_on_floor():
+	if Input.is_action_just_pressed("jump"):
+		if time_in_air < 0.1:
 			jump()
 		
 		jump_held_duration = 0
@@ -82,7 +85,13 @@ func _physics_process(delta: float) -> void:
 	var mask_name = str(Types.Mask.keys()[GameManager.game_state.current_mask]).to_lower()
 	
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x += direction * SPEED * delta * 4.0
+		
+		if velocity.x > SPEED:
+			velocity.x = SPEED
+		elif velocity.x < -SPEED:
+			velocity.x = -SPEED
+		
 		if direction < 0:
 			facing_direction = "left"
 		else:
@@ -96,9 +105,6 @@ func _physics_process(delta: float) -> void:
 			
 	if not is_on_floor():
 		animation.play("jump_" + facing_direction + "_" + mask_name)
-			
-		
-		
 
 	move_and_slide()
 	save_state()
