@@ -1,22 +1,22 @@
 [gd_scene format=3 uid="uid://davo0c0fdewl3"]
 
 [ext_resource type="Script" uid="uid://duyi2nvitahoy" path="res://models/spikes/spikes.gd" id="1_uevoc"]
+[ext_resource type="Texture2D" uid="uid://c48mlsg3rhfya" path="res://sprites/Spikes/Spikes_normal.png" id="2_veb3h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f6gtd"]
-size = Vector2(112, 14)
+size = Vector2(62, 9)
 
 [node name="Spikes" type="Area2D" unique_id=1017898397]
 collision_mask = 8
 script = ExtResource("1_uevoc")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=960657039]
-offset_left = -97.0
-offset_top = -17.0
-offset_right = 20.0
-color = Color(0.78352344, 0.7835234, 0.7835234, 1)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=323853972]
-position = Vector2(-38, -7)
+position = Vector2(32, -4.5)
 shape = SubResource("RectangleShape2D_f6gtd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1146207353]
+position = Vector2(32, -32)
+scale = Vector2(2, 2)
+texture = ExtResource("2_veb3h")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

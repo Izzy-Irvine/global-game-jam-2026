@@ -36,6 +36,8 @@ func _on_mask_changed(mask):
 
 func _on_reload_state():
 	var state = GameManager.game_state
+	velocity.x = 0
+	velocity.y = 0
 	position = state.object_states[get_instance_id()]["position"]
 	
 
@@ -109,7 +111,7 @@ func _physics_process(delta: float) -> void:
 		elif velocity.x < 0:
 			velocity.x += SPEED * delta * 8.0
 		
-		if velocity.x > -10 and velocity.x < 10:
+		if velocity.x > -50 and velocity.x < 50:
 			velocity.x = 0
 	
 		animation.play("idle_" + facing_direction + "_" + mask_name)

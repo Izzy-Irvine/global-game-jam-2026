@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cmwd7jk3fetgd"]
+
+[ext_resource type="Script" uid="uid://ntj7hexjubm5" path="res://models/fireball/fireball.gd" id="1_mj8p4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jpejg"]
+radius = 17.029387
+
+[node name="Fireball" type="Area2D" unique_id=1367280447]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_mj8p4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=797714908]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(1, 0.53333336, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=928946974]
+shape = SubResource("CircleShape2D_jpejg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
