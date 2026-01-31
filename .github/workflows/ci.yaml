@@ -19,11 +19,13 @@ jobs:
           use-dotnet: false
       
       - name: Build
-        run: godot --headless --verbose --export-release "Web" "export/index.html"
+        run: |
+          mkdir export
+          godot --headless --verbose --export-release "Web" "export/index.html"
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         if: github.ref == 'refs/heads/main'
         with:
           name: web
-          path: out
+          path: export
