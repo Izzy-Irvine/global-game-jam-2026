@@ -17,15 +17,15 @@ func _on_reload_state():
 		
 func _update_mask_type(mask: Types.Mask):
 	pass
-	#match mask:
-		#Types.Mask.NONE:
-			#$Sprite2D.visible = false
-		#Types.Mask.BLUE:
-			#$Sprite2D.visible = true
-			#$Sprite2D.color = "#0000ff"
-		#Types.Mask.RED:
-			#$Sprite2D.visible = true
-			#$Sprite2D.color = "#ff0000"
+	match mask:
+		Types.Mask.NONE:
+			$Sprite2D.visible = false
+		Types.Mask.BLUE:
+			$Sprite2D.visible = true
+			$Sprite2D.texture = preload("res://sprites/Masks/Blue.png")
+		Types.Mask.RED:
+			$Sprite2D.visible = true
+			$Sprite2D.texture = preload("res://sprites/Masks/Red.png")
 			
 
 func _on_body_entered(body: Node2D) -> void:
