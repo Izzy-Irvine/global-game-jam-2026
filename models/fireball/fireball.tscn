@@ -1,23 +1,79 @@
 [gd_scene format=3 uid="uid://cmwd7jk3fetgd"]
 
 [ext_resource type="Script" uid="uid://ntj7hexjubm5" path="res://models/fireball/fireball.gd" id="1_mj8p4"]
+[ext_resource type="Texture2D" uid="uid://dy2hyfldt84dj" path="res://sprites/Fireball/Fireball_Spritesheet.png" id="2_jpejg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jpejg"]
 radius = 17.029387
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vsc1"]
+atlas = ExtResource("2_jpejg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54cp0"]
+atlas = ExtResource("2_jpejg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glgwt"]
+atlas = ExtResource("2_jpejg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xf80a"]
+atlas = ExtResource("2_jpejg")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbtqu"]
+atlas = ExtResource("2_jpejg")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glfu5"]
+atlas = ExtResource("2_jpejg")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3jdw"]
+atlas = ExtResource("2_jpejg")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3vycs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vsc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54cp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glgwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xf80a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbtqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glfu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3jdw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Fireball" type="Area2D" unique_id=1367280447]
 collision_layer = 4
 collision_mask = 32
 script = ExtResource("1_mj8p4")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=797714908]
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-color = Color(1, 0.53333336, 0, 1)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=928946974]
 shape = SubResource("CircleShape2D_jpejg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1771340569]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_3vycs")
+frame_progress = 0.9580087
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

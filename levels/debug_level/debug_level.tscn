@@ -49,7 +49,7 @@ drag_bottom_margin = 0.1
 position = Vector2(-256, 128)
 
 [node name="Mover" type="Node2D" parent="." unique_id=530286504]
-position = Vector2(449.49792, 0)
+position = Vector2(342.03928, 0)
 script = ExtResource("5_um7ct")
 move_x_amplitude = 68
 
@@ -93,7 +93,7 @@ position = Vector2(0, 384)
 position = Vector2(128, 128)
 
 [node name="Mask2" parent="." unique_id=2034294227 instance=ExtResource("4_6leoi")]
-position = Vector2(961, -25)
+position = Vector2(159, 129)
 mask = 2
 
 [node name="Fireball" parent="." unique_id=1367280447 instance=ExtResource("11_2we3d")]
