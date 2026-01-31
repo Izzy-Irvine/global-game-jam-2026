@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://don34sck1x8d1" path="res://models/killzone/killzone.tscn" id="9_1ycwy"]
 [ext_resource type="PackedScene" uid="uid://cmwd7jk3fetgd" path="res://models/fireball/fireball.tscn" id="11_2we3d"]
 [ext_resource type="PackedScene" uid="uid://b6qfv0q07ub8f" path="res://models/bubble/bubble.tscn" id="12_1m6oy"]
+[ext_resource type="PackedScene" uid="uid://df2be83m10lhu" path="res://models/wall/wall.tscn" id="13_dcryx"]
 
 [sub_resource type="Resource" id="Resource_b47vy"]
 script = ExtResource("6_n1bhp")
@@ -50,7 +51,7 @@ drag_bottom_margin = 0.1
 position = Vector2(-256, 128)
 
 [node name="Mover" type="Node2D" parent="." unique_id=530286504]
-position = Vector2(271.50272, 0)
+position = Vector2(181.2647, 0)
 script = ExtResource("5_um7ct")
 move_x_amplitude = 68
 
@@ -124,3 +125,12 @@ size = Vector2(128, 32)
 
 [node name="bubble" parent="." unique_id=1436452658 instance=ExtResource("12_1m6oy")]
 position = Vector2(128, -409)
+
+[node name="Wall" parent="." unique_id=161491479 instance=ExtResource("13_dcryx")]
+position = Vector2(448, 128)
+
+[node name="Wall2" parent="." unique_id=954103712 instance=ExtResource("13_dcryx")]
+position = Vector2(448, 192)
+
+[node name="Wall3" parent="." unique_id=1479687448 instance=ExtResource("13_dcryx")]
+position = Vector2(448, 256)
