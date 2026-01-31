@@ -6,8 +6,8 @@
 [ext_resource type="Script" uid="uid://c4r5ca16fd3th" path="res://tools/ground_tile_set.gd" id="4_ficj5"]
 [ext_resource type="PackedScene" uid="uid://bntq3mab78kup" path="res://models/mask/mask.tscn" id="6_ficj5"]
 [ext_resource type="Shader" uid="uid://0ecr0isyenrs" path="res://levels/layout_level/layout_level.gdshader" id="7_1y5gp"]
-[ext_resource type="Shader" uid="uid://qcmy5f6pcej6" path="res://levels/layout_level/PostProcess.gdshader" id="7_7vtxx"]
-[ext_resource type="Script" uid="uid://brb415gxaa4db" path="res://levels/layout_level/screen_effect.gd" id="7_aniky"]
+[ext_resource type="Shader" path="res://levels/layout_level/PostProcess.gdshader" id="7_7vtxx"]
+[ext_resource type="Script" path="res://levels/layout_level/screen_effect.gd" id="7_aniky"]
 [ext_resource type="PackedScene" uid="uid://dqaj8q0uipms3" path="res://models/platform/platform.tscn" id="9_7vtxx"]
 [ext_resource type="PackedScene" uid="uid://b6qfv0q07ub8f" path="res://models/bubble/bubble.tscn" id="10_x8s8n"]
 
@@ -53,6 +53,13 @@ offset_top = -5758.0
 offset_right = 9710.0
 offset_bottom = 4517.0
 texture = SubResource("CanvasTexture_1y5gp")
+
+[node name="DeathCounter" type="Label" parent="CanvasLayer" unique_id=1593978495]
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 208.0
+offset_bottom = 107.0
+text = "Deaths: 0"
 
 [node name="Player" parent="." unique_id=459358127 instance=ExtResource("2_ixulc")]
 z_index = 10
