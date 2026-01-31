@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://mb1ku567frly"]
+
+[ext_resource type="Script" uid="uid://c0wha36hv30yh" path="res://models/mushroom/mushroom.gd" id="1_m420d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tukw3"]
+size = Vector2(51, 32)
+
+[node name="Mushroom" type="Area2D" unique_id=1059415196]
+collision_layer = 4
+collision_mask = 32
+script = ExtResource("1_m420d")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1340917358]
+offset_left = -26.0
+offset_top = -26.0
+offset_right = 25.0
+color = Color(0.9843137, 0.20784314, 0.22352941, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1478354506]
+position = Vector2(-0.5, -16)
+shape = SubResource("RectangleShape2D_tukw3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

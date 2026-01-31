@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 400.0
-const JUMP_VELOCITY = -550.0
+const JUMP_VELOCITY = -500.0
 const TERMINAL_VELOCITY = -600
 const GRAVITY = 3800.0
 
@@ -10,6 +10,7 @@ var jump_held_duration = 0
 var is_jumping = false
 var time_in_air = 0
 var bubble_jump = false
+var mushroom_bounce = 0
 
 @onready var animation = $Animation
 
@@ -59,6 +60,7 @@ func jump():
 	velocity.y = JUMP_VELOCITY
 	is_jumping = true
 	bubble_jump = false
+	mushroom_bounce = 0
 
 func _physics_process(delta: float) -> void:
 	if (is_on_floor() or bubble_jump) and jump_held_duration < 0.1 and jump_held_duration > 0 and not is_jumping:
@@ -66,22 +68,28 @@ func _physics_process(delta: float) -> void:
 		
 	if is_on_floor():
 		time_in_air = 0
+		if mushroom_bounce > 1.5: # some safe guarding so you immediately aren't on the floor when you hit the mushroom
+			mushroom_bounce = 0
 	else:
 		time_in_air += delta
 		velocity.y += GRAVITY * delta
 		if velocity.y < TERMINAL_VELOCITY:
 			velocity.y = TERMINAL_VELOCITY 
 	
+	print("mushroom bounce: " + str(mushroom_bounce))
 	
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") and not is_jumping:
 		if time_in_air < 0.1:
 			jump()
 		
 		jump_held_duration = 0
-	elif Input.is_action_pressed("jump"):
-		jump_held_duration += delta 
+	elif Input.is_action_pressed("jump") or mushroom_bounce:
+		jump_held_duration += delta
+		if mushroom_bounce > 0:
+			mushroom_bounce += delta
 		if jump_held_duration < 0.25 and is_jumping:
-			velocity.y = JUMP_VELOCITY + jump_held_duration * JUMP_VELOCITY
+			var extra_bounce = -400 if mushroom_bounce else 0
+			velocity.y = JUMP_VELOCITY + jump_held_duration * JUMP_VELOCITY + extra_bounce
 	else:
 		jump_held_duration = 0
 		is_jumping = false
