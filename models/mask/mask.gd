@@ -41,7 +41,6 @@ func _apply_mask_visual():
 	if sprite.texture == tex:
 		return
 	
-	print("Got here")
 	sprite.texture = tex
 	sprite.visible = true
 

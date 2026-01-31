@@ -41,10 +41,10 @@ func _update_platform():
 	
 	match platform_type:
 		Types.Mask.NONE:
-			collision_layer = 1
+			collision_layer = Types.OBJECTS_LAYER
 		Types.Mask.BLUE:
-			collision_layer = 2
+			collision_layer = Types.BLUE_MASK_LAYER
 		Types.Mask.RED:
-			collision_layer = 4
+			collision_layer = Types.RED_MASK_LAYER
 	
 	shape.size = size

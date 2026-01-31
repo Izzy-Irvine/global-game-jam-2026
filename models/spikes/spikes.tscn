@@ -6,7 +6,7 @@
 size = Vector2(112, 14)
 
 [node name="Spikes" type="Area2D" unique_id=1017898397]
-collision_layer = 0
+collision_mask = 8
 script = ExtResource("1_uevoc")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=960657039]

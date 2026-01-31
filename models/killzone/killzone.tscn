@@ -5,7 +5,7 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k227l"]
 
 [node name="Killzone" type="Area2D" unique_id=1273359383]
-collision_layer = 0
+collision_mask = 8
 script = ExtResource("1_k227l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1094262558]

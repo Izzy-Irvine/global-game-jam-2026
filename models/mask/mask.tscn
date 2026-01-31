@@ -8,13 +8,13 @@ radius = 11.0
 
 [node name="Mask" type="Area2D" unique_id=1188811355 node_paths=PackedStringArray("sprite")]
 position = Vector2(0, -1.970607)
-collision_layer = 0
+collision_mask = 8
 script = ExtResource("1_epmsv")
 sprite = NodePath("Sprite2D")
-mask = null
+mask = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=521977168]
-position = Vector2(0, -65.988434)
+position = Vector2(0, -62.46539)
 scale = Vector2(2, 2)
 texture = ExtResource("2_rq0a4")
 

@@ -26,6 +26,8 @@ func _ready():
 	GameManager.changed_mask.connect(_on_mask_changed)
 	GameManager.reload_state.connect(_on_reload_state)
 	
+	collision_mask = Types.OBJECTS_LAYER
+	
 	save_state()
 	
 func _on_mask_changed(mask):
@@ -37,14 +39,13 @@ func _on_reload_state():
 	
 
 func update_mask(mask):
-	#rect.color = MASK_COLOURS[mask]
 	match mask:
 		Types.Mask.NONE:
-			collision_mask = 1
+			collision_mask = Types.OBJECTS_LAYER
 		Types.Mask.BLUE:
-			collision_mask = 3
+			collision_mask = Types.OBJECTS_LAYER | Types.BLUE_MASK_LAYER
 		Types.Mask.RED:
-			collision_mask = 5
+			collision_mask = Types.OBJECTS_LAYER | Types.RED_MASK_LAYER
 
 
 func jump():
