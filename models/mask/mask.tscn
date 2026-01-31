@@ -4,20 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://qfsuqelg6pn6" path="res://sprites/Masks/Red.png" id="2_rq0a4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_epmsv"]
-radius = 7.071068
+radius = 11.0
 
 [node name="Mask" type="Area2D" unique_id=1188811355]
 collision_layer = 0
 script = ExtResource("1_epmsv")
 mask = null
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1161243038]
-position = Vector2(0, -30)
-shape = SubResource("CircleShape2D_epmsv")
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=521977168]
-position = Vector2(0, -32)
+position = Vector2(0, -64)
+scale = Vector2(2, 2)
 texture = ExtResource("2_rq0a4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1161243038]
+position = Vector2(0, -60)
+shape = SubResource("CircleShape2D_epmsv")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
