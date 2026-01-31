@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8md6de26dhp0"
-path="res://.godot/imported/1.png-04f54632f987822c631a62f625ccee36.ctex"
+uid="uid://bvuf6jmaj22i0"
+path="res://.godot/imported/RED_Platform.png-0da5176ac6f8548edd9e825f06d631ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Character/1.png"
-dest_files=["res://.godot/imported/1.png-04f54632f987822c631a62f625ccee36.ctex"]
+source_file="res://sprites/Platform/RED_Platform.png"
+dest_files=["res://.godot/imported/RED_Platform.png-0da5176ac6f8548edd9e825f06d631ea.ctex"]
 
 [params]
 

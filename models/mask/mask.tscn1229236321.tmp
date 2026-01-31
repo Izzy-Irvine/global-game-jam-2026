@@ -1,22 +1,18 @@
 [gd_scene format=3 uid="uid://bntq3mab78kup"]
 
 [ext_resource type="Script" uid="uid://uwrywv3omjlv" path="res://models/mask/mask.gd" id="1_epmsv"]
-[ext_resource type="Texture2D" uid="uid://comdukid88ual" path="res://sprites/Masks/Blue.png" id="2_rq0a4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_epmsv"]
 radius = 11.0
 
-[node name="Mask" type="Area2D" unique_id=1188811355 node_paths=PackedStringArray("sprite")]
+[node name="Mask" type="Area2D" unique_id=1188811355]
 position = Vector2(0, -1.970607)
 collision_layer = 0
 script = ExtResource("1_epmsv")
-sprite = NodePath("Sprite2D")
-mask = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=521977168]
-position = Vector2(0, -65.988434)
+position = Vector2(0, -1.29963)
 scale = Vector2(2, 2)
-texture = ExtResource("2_rq0a4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1161243038]
 position = Vector2(0, -60)

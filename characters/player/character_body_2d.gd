@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
 const SPEED = 250.0
-const JUMP_VELOCITY = -500.0
+const JUMP_VELOCITY = -450.0
 const TERMINAL_VELOCITY = -600
-const GRAVITY = 4000.0
+const GRAVITY = 3500.0
 
-var facing_direction = 1
+var facing_direction = "right"
 var jump_held_duration = 0
 var is_jumping = false
 
@@ -78,20 +78,23 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("move_left", "move_right")
+	var mask_name = str(Types.Mask.keys()[GameManager.game_state.current_mask]).to_lower()
+	
 	if direction:
-		facing_direction = direction
 		velocity.x = direction * SPEED
 		if direction < 0:
-			animation.play("walk_left")
+			facing_direction = "left"
 		else:
-			animation.play("walk_right")
+			facing_direction = "right"
+			
+		animation.play("walk_" + facing_direction + "_" + mask_name)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
-		if facing_direction < 0:
-			animation.play("idle_left")
-		else:
-			animation.play("idle_right")
+		animation.play("idle_" + facing_direction + "_" + mask_name)
+			
+	if not is_on_floor():
+		animation.play("jump_" + facing_direction + "_" + mask_name)
 			
 		
 		

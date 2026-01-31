@@ -49,7 +49,7 @@ drag_bottom_margin = 0.1
 position = Vector2(-159, 126)
 
 [node name="Mover" type="Node2D" parent="." unique_id=530286504]
-position = Vector2(276.05145, 0)
+position = Vector2(163.45226, 0)
 script = ExtResource("5_um7ct")
 move_x_amplitude = 68
 
@@ -81,7 +81,7 @@ size = Vector2(300, 32)
 position = Vector2(1053, -42)
 
 [node name="Spikes2" parent="." unique_id=655083165 instance=ExtResource("2_b47vy")]
-position = Vector2(845, 233)
+position = Vector2(672, 71)
 
 [node name="Spikes3" parent="." unique_id=1556856508 instance=ExtResource("2_b47vy")]
 position = Vector2(1415, 45)
@@ -91,8 +91,3 @@ position = Vector2(0, 384)
 
 [node name="Mask" parent="." unique_id=1188811355 instance=ExtResource("4_6leoi")]
 position = Vector2(128, 128)
-mask = 1
-
-[node name="Mask2" parent="." unique_id=2034294227 instance=ExtResource("4_6leoi")]
-position = Vector2(961, -25)
-mask = 2
