@@ -1,11 +1,12 @@
 [gd_scene format=4 uid="uid://dnmfnjnx8etk5"]
 
 [ext_resource type="PackedScene" uid="uid://dqaj8q0uipms3" path="res://models/platform/platform.tscn" id="1_56qw4"]
-[ext_resource type="Script" path="res://levels/debug_level/debug_level.gd" id="1_p36ab"]
+[ext_resource type="Script" uid="uid://bdjhty5ewnikq" path="res://levels/debug_level/debug_level.gd" id="1_p36ab"]
 [ext_resource type="PackedScene" uid="uid://b06f2whwfjsas" path="res://characters/player/player.tscn" id="1_tbgih"]
 [ext_resource type="PackedScene" uid="uid://davo0c0fdewl3" path="res://models/spikes/spikes.tscn" id="2_b47vy"]
 [ext_resource type="PackedScene" uid="uid://bntq3mab78kup" path="res://models/mask/mask.tscn" id="4_6leoi"]
 [ext_resource type="Script" uid="uid://b32lwepbwtb10" path="res://tools/ground_tile_map.gd" id="5_6leoi"]
+[ext_resource type="Script" uid="uid://yib7xxfy1fw8" path="res://global/mover.gd" id="5_um7ct"]
 [ext_resource type="Script" uid="uid://c4r5ca16fd3th" path="res://tools/ground_tile_set.gd" id="6_n1bhp"]
 [ext_resource type="PackedScene" uid="uid://dd8h86grprhrw" path="res://models/checkpoint/checkpoint.tscn" id="8_t8hds"]
 [ext_resource type="PackedScene" uid="uid://don34sck1x8d1" path="res://models/killzone/killzone.tscn" id="9_1ycwy"]
@@ -49,8 +50,13 @@ mask = 2
 position = Vector2(-32, 97)
 size = Vector2(192, 64)
 
-[node name="Platform" parent="." unique_id=1316275024 instance=ExtResource("1_56qw4")]
-position = Vector2(628, 137)
+[node name="Mover" type="Node2D" parent="." unique_id=530286504]
+position = Vector2(64.436966, 0)
+script = ExtResource("5_um7ct")
+move_x_amplitude = 68
+
+[node name="Platform" parent="Mover" unique_id=1316275024 instance=ExtResource("1_56qw4")]
+position = Vector2(545.6009, 135)
 collision_layer = 2
 platform_type = 1
 
