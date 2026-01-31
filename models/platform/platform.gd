@@ -48,8 +48,8 @@ func _update_platform():
 		Types.Mask.NONE:
 			collision_layer = Types.OBJECTS_LAYER
 		Types.Mask.BLUE:
-			collision_layer = Types.BLUE_MASK_LAYER
+			collision_layer = Types.BLUE_OBJECT_LAYER
 		Types.Mask.RED:
-			collision_layer = Types.RED_MASK_LAYER
+			collision_layer = Types.RED_OBJECT_LAYER
 	
 	shape.size = size

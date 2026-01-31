@@ -45,10 +45,13 @@ func update_mask(mask):
 	match mask:
 		Types.Mask.NONE:
 			collision_mask = Types.OBJECTS_LAYER
+			collision_layer = Types.PLAYER_LAYER
 		Types.Mask.BLUE:
-			collision_mask = Types.OBJECTS_LAYER | Types.BLUE_MASK_LAYER
+			collision_mask = Types.OBJECTS_LAYER | Types.BLUE_OBJECT_LAYER
+			collision_layer = Types.PLAYER_LAYER | Types.BLUE_PLAYER_LAYER
 		Types.Mask.RED:
-			collision_mask = Types.OBJECTS_LAYER | Types.RED_MASK_LAYER
+			collision_mask = Types.OBJECTS_LAYER | Types.RED_OBJECT_LAYER
+			collision_layer = Types.PLAYER_LAYER | Types.RED_PLAYER_LAYER
 
 
 func jump():
