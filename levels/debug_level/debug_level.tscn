@@ -51,15 +51,13 @@ drag_bottom_margin = 0.1
 position = Vector2(-256, 128)
 
 [node name="Mover" type="Node2D" parent="." unique_id=530286504]
-position = Vector2(199.24213, 0)
+position = Vector2(141.31, 0)
 script = ExtResource("5_um7ct")
 move_x_amplitude = 68
 
 [node name="Platform" parent="Mover" unique_id=156594794 instance=ExtResource("1_56qw4")]
 position = Vector2(322.86682, -161)
 collision_layer = 2
-platform_type = 1
-size = Vector2(256, 32)
 
 [node name="TileMap" type="Node2D" parent="." unique_id=969191371]
 script = ExtResource("5_6leoi")
@@ -72,12 +70,9 @@ erase_mode = true
 [node name="Platform3" parent="." unique_id=252398942 instance=ExtResource("1_56qw4")]
 position = Vector2(1394, 87)
 collision_layer = 4
-platform_type = 2
-size = Vector2(300, 32)
 
 [node name="Platform2" parent="." unique_id=1799846928 instance=ExtResource("1_56qw4")]
 position = Vector2(924, 6)
-size = Vector2(300, 32)
 
 [node name="Checkpoint" parent="." unique_id=1810357186 instance=ExtResource("8_t8hds")]
 position = Vector2(1057, -26)
@@ -115,13 +110,10 @@ position = Vector2(-128, 128)
 
 [node name="Platform" parent="." unique_id=1316275024 instance=ExtResource("1_56qw4")]
 position = Vector2(129, -32)
-size = Vector2(128, 32)
 
 [node name="Platform4" parent="." unique_id=724010755 instance=ExtResource("1_56qw4")]
 position = Vector2(129, -161)
 collision_layer = 2
-platform_type = 1
-size = Vector2(128, 32)
 
 [node name="bubble" parent="." unique_id=1436452658 instance=ExtResource("12_1m6oy")]
 position = Vector2(128, -409)

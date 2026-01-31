@@ -25,6 +25,7 @@ func change_mask(new_mask: Types.Mask):
 func pickup_mask(new_mask: Types.Mask):
 	game_state.masks_collected.append(new_mask)
 	change_mask(new_mask)
+	save_checkpoint()
 
 func save_object_state(object, state):
 	game_state.object_states[object] = state
