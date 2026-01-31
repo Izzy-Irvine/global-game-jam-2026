@@ -55,5 +55,8 @@ func _update_platform():
 	shape.size = size
 
 func _physics_process(delta: float):
+	if Engine.is_editor_hint():
+		return
+		
 	# When you press down you will go through platforms
 	$CollisionShape2D.disabled = Input.is_action_pressed("phase_platform")

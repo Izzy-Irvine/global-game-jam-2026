@@ -9,6 +9,7 @@ var facing_direction = "right"
 var jump_held_duration = 0
 var is_jumping = false
 var time_in_air = 0
+var bubble_jump = false
 
 @onready var animation = $Animation
 
@@ -57,13 +58,14 @@ func update_mask(mask):
 func jump():
 	velocity.y = JUMP_VELOCITY
 	is_jumping = true
+	bubble_jump = false
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	if (is_on_floor() or bubble_jump) and jump_held_duration < 0.1 and jump_held_duration > 0 and not is_jumping:
+		jump()
+		
 	if is_on_floor():
 		time_in_air = 0
-		if jump_held_duration < 0.1 and jump_held_duration > 0:
-			jump()
 	else:
 		time_in_air += delta
 		velocity.y += GRAVITY * delta
