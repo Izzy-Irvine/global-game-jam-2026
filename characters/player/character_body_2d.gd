@@ -84,9 +84,14 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
 	var mask_name = str(Types.Mask.keys()[GameManager.game_state.current_mask]).to_lower()
 	
+	
 	if direction:
-		velocity.x += direction * SPEED * delta * 4.0
+		# set a multiplier for your acceleration based on if you're quickly turning around vs just trying to speed up
+		var multiplier = 12.0 if (velocity.x > 0 and direction < 0) or (velocity.x < 0 and direction > 0) else 4.0
 		
+		velocity.x += direction * SPEED * delta * multiplier
+		
+		# bound speed to SPEED
 		if velocity.x > SPEED:
 			velocity.x = SPEED
 		elif velocity.x < -SPEED:
@@ -99,8 +104,14 @@ func _physics_process(delta: float) -> void:
 			
 		animation.play("walk_" + facing_direction + "_" + mask_name)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if velocity.x > 0:
+			velocity.x -= SPEED * delta * 8.0
+		elif velocity.x < 0:
+			velocity.x += SPEED * delta * 8.0
 		
+		if velocity.x > -10 and velocity.x < 10:
+			velocity.x = 0
+	
 		animation.play("idle_" + facing_direction + "_" + mask_name)
 			
 	if not is_on_floor():
