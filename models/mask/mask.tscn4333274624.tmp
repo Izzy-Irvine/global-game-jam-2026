@@ -9,7 +9,6 @@ radius = 7.071068
 [node name="Mask" type="Area2D" unique_id=1188811355]
 collision_layer = 0
 script = ExtResource("1_epmsv")
-mask = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1161243038]
 position = Vector2(0, -30)
