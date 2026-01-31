@@ -1,0 +1,31 @@
+name: "godot-ci export"
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  export-web:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: chickensoft-games/setup-godot@v2
+        name: Setup Godot
+        with:
+          version: 4.6.0
+          include-templates: true
+          use-dotnet: false
+      
+      - name: Build
+        run: |
+          mkdir export
+          godot --headless --verbose --export-release "Web" "export/index.html"
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        if: github.ref == 'refs/heads/main'
+        with:
+          name: web
+          path: export
