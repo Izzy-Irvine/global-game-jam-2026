@@ -1,5 +1,5 @@
 @tool
-extends StaticBody2D
+extends CharacterBody2D
 
 var TEXTURES = {
 	Types.Mask.NONE: preload("res://sprites/Ground/NONE/NONE_Top_Center.png"),

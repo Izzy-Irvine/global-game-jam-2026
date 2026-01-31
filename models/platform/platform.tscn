@@ -3,16 +3,16 @@
 [ext_resource type="Script" uid="uid://dtmvmy6rbdlel" path="res://models/platform/platform.gd" id="1_7ibc5"]
 [ext_resource type="Texture2D" uid="uid://b5piqeco0xgu7" path="res://sprites/Ground/NONE/NONE_Top_Center.png" id="2_osfsy"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_osfsy"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ibc5"]
 size = Vector2(64, 32)
 
-[node name="Platform" type="StaticBody2D" unique_id=1316275024]
+[node name="Platform" type="CharacterBody2D" unique_id=353121591]
 scale = Vector2(2, 2)
 collision_mask = 8
 script = ExtResource("1_7ibc5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=712743159]
-shape = SubResource("RectangleShape2D_osfsy")
+shape = SubResource("RectangleShape2D_7ibc5")
 one_way_collision = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2098320726]

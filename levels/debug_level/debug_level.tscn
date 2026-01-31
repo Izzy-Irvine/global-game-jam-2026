@@ -51,7 +51,7 @@ drag_bottom_margin = 0.1
 position = Vector2(-256, 128)
 
 [node name="Mover" type="Node2D" parent="." unique_id=530286504]
-position = Vector2(181.2647, 0)
+position = Vector2(199.24213, 0)
 script = ExtResource("5_um7ct")
 move_x_amplitude = 68
 
@@ -128,6 +128,21 @@ position = Vector2(128, -409)
 
 [node name="Wall" parent="." unique_id=161491479 instance=ExtResource("13_dcryx")]
 position = Vector2(448, 128)
+
+[node name="Wall" parent="Wall" unique_id=1149813545 instance=ExtResource("13_dcryx")]
+position = Vector2(64, 0)
+collision_layer = 2
+wall_type = 1
+
+[node name="Wall2" parent="Wall" unique_id=1459142225 instance=ExtResource("13_dcryx")]
+position = Vector2(64, 64)
+collision_layer = 2
+wall_type = 1
+
+[node name="Wall3" parent="Wall" unique_id=554689332 instance=ExtResource("13_dcryx")]
+position = Vector2(64, 128)
+collision_layer = 2
+wall_type = 1
 
 [node name="Wall2" parent="." unique_id=954103712 instance=ExtResource("13_dcryx")]
 position = Vector2(448, 192)

@@ -116,8 +116,7 @@ func _physics_process(delta: float) -> void:
 		elif velocity.x < 0:
 			velocity.x += SPEED * delta * 8.0
 		
-		if velocity.x > -50 and velocity.x < 50:
-			velocity.x = 0
+		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 		animation.play("idle_" + facing_direction + "_" + mask_name)
 			
