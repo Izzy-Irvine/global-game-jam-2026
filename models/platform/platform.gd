@@ -23,14 +23,19 @@ var shape: Shape2D = RectangleShape2D.new()
 func _ready() -> void:
 	shape.size = size
 	$CollisionShape2D.shape = shape
+	_set_opacity(Types.Mask.NONE)
 	GameManager.changed_mask.connect(_on_mask_change)
 	_update_platform()
 
-func _on_mask_change(mask: Types.Mask) -> void:
+	
+func _set_opacity(mask):
 	if mask == platform_type or platform_type == Types.Mask.NONE:
 		$TextureRect.modulate = Color.WHITE
 	else:
 		$TextureRect.modulate = Color(1,1,1,0.1)
+
+func _on_mask_change(mask: Types.Mask) -> void:
+	_set_opacity(mask)
 
 func _update_platform():
 	if not is_inside_tree():
