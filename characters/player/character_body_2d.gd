@@ -1,9 +1,13 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
+const SPEED = 250.0
 const JUMP_VELOCITY = -500.0
+const TERMINAL_VELOCITY = -600
+const GRAVITY = 4000.0
 
 var facing_direction = 1
+var jump_held_duration = 0
+var is_jumping = false
 
 @onready var animation = $Animation
 
@@ -42,14 +46,34 @@ func update_mask(mask):
 		Types.Mask.RED:
 			collision_mask = 5
 
+
+func jump():
+	velocity.y = JUMP_VELOCITY
+	is_jumping = true
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
+	if is_on_floor():
+		if jump_held_duration < 0.1 and jump_held_duration > 0:
+			jump()
+	else:
+		velocity.y += GRAVITY * delta
+		if velocity.y < TERMINAL_VELOCITY:
+			velocity.y = TERMINAL_VELOCITY 
+	
+	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		if is_on_floor():
+			jump()
+		
+		jump_held_duration = 0
+	elif Input.is_action_pressed("jump"):
+		jump_held_duration += delta 
+		if jump_held_duration < 0.25 and is_jumping:
+			velocity.y = JUMP_VELOCITY + jump_held_duration * JUMP_VELOCITY
+	else:
+		jump_held_duration = 0
+		is_jumping = false
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
