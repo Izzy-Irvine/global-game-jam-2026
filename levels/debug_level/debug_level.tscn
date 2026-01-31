@@ -18,9 +18,19 @@ metadata/_custom_type_script = "uid://c4r5ca16fd3th"
 [node name="DebugLevel" type="Node2D" unique_id=185633665]
 script = ExtResource("1_p36ab")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1786338370]
+layer = 100
+
+[node name="DeathCounter" type="Label" parent="CanvasLayer" unique_id=1368922874]
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 208.0
+offset_bottom = 107.0
+text = "Deaths: 0"
+
 [node name="Player" parent="." unique_id=459358127 instance=ExtResource("1_tbgih")]
 z_index = 10
-position = Vector2(-94, 64)
+position = Vector2(-33, 60)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=388228214]
 position = Vector2(8.00029, -3.9991188)
@@ -47,11 +57,11 @@ position = Vector2(896, 29)
 mask = 2
 
 [node name="Starting Platform" parent="." unique_id=631109881 instance=ExtResource("1_56qw4")]
-position = Vector2(-32, 97)
+position = Vector2(-1, 97)
 size = Vector2(128, 32)
 
 [node name="Mover" type="Node2D" parent="." unique_id=530286504]
-position = Vector2(165.89177, 0)
+position = Vector2(175.69159, 0)
 script = ExtResource("5_um7ct")
 move_x_amplitude = 68
 
@@ -76,7 +86,7 @@ platform_type = 2
 size = Vector2(300, 32)
 
 [node name="Platform2" parent="." unique_id=1799846928 instance=ExtResource("1_56qw4")]
-position = Vector2(988, 51)
+position = Vector2(1000, 44)
 collision_layer = 2
 platform_type = 1
 size = Vector2(300, 32)
@@ -88,7 +98,7 @@ position = Vector2(1022, 16)
 position = Vector2(672, 71)
 
 [node name="Spikes3" parent="." unique_id=1556856508 instance=ExtResource("2_b47vy")]
-position = Vector2(1321, 49)
+position = Vector2(1415, 45)
 
 [node name="Killzone" parent="." unique_id=1273359383 instance=ExtResource("9_1ycwy")]
 position = Vector2(0, 384)

@@ -6,11 +6,14 @@ const MASK_KEY_MAPPING = {
 	"mask3": Types.Mask.RED
 }
 
+var death_count = 0
+
 var game_state = GameState.new()
 
 var saved_checkpoint = game_state
 
 signal changed_mask(mask: Types.Mask)
+signal died()
 
 signal reload_state()
 
@@ -32,6 +35,8 @@ func get_object_state(object, key):
 func death():
 	print("You died!")
 	print("Reloading state: " + str(saved_checkpoint.object_states))
+	death_count += 1
+	died.emit(death_count)
 	game_state = saved_checkpoint.copy()
 	reload_state.emit()
 	change_mask(game_state.current_mask)
