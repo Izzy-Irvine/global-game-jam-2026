@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 Types="*uid://3yhtm4ep4wkc"
 GameManager="*uid://bauw5bi6ick7q"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
@@ -77,6 +81,7 @@ move_right={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

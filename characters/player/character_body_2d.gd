@@ -27,7 +27,6 @@ func _on_mask_changed(mask):
 
 func _on_reload_state():
 	var state = GameManager.game_state
-	update_mask(state.current_mask)
 	position = state.object_states[get_instance_id()]["position"]
 	
 

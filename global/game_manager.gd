@@ -34,6 +34,7 @@ func death():
 	print("Reloading state: " + str(saved_checkpoint.object_states))
 	game_state = saved_checkpoint.copy()
 	reload_state.emit()
+	change_mask(game_state.current_mask)
 	
 func save_checkpoint():
 	print("Saving state: " + str(game_state.object_states))
