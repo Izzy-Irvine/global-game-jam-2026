@@ -53,3 +53,7 @@ func _update_platform():
 			collision_layer = Types.RED_OBJECT_LAYER
 	
 	shape.size = size
+
+func _physics_process(delta: float):
+	# When you press down you will go through platforms
+	$CollisionShape2D.disabled = Input.is_action_pressed("phase_platform")

@@ -13,6 +13,7 @@ script = ExtResource("1_7ibc5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=712743159]
 shape = SubResource("RectangleShape2D_osfsy")
+one_way_collision = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2098320726]
 offset_left = -32.0

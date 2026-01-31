@@ -49,12 +49,12 @@ drag_bottom_margin = 0.1
 position = Vector2(-256, 128)
 
 [node name="Mover" type="Node2D" parent="." unique_id=530286504]
-position = Vector2(342.03928, 0)
+position = Vector2(295.58685, 0)
 script = ExtResource("5_um7ct")
 move_x_amplitude = 68
 
 [node name="Platform" parent="Mover" unique_id=156594794 instance=ExtResource("1_56qw4")]
-position = Vector2(410.3595, 107)
+position = Vector2(322.86682, -161)
 collision_layer = 2
 platform_type = 1
 size = Vector2(256, 32)
@@ -81,7 +81,7 @@ size = Vector2(300, 32)
 position = Vector2(1057, -26)
 
 [node name="Spikes2" parent="." unique_id=655083165 instance=ExtResource("2_b47vy")]
-position = Vector2(839, 90)
+position = Vector2(688, -193)
 
 [node name="Spikes3" parent="." unique_id=1556856508 instance=ExtResource("2_b47vy")]
 position = Vector2(1415, 45)
@@ -93,11 +93,11 @@ position = Vector2(0, 384)
 position = Vector2(128, 128)
 
 [node name="Mask2" parent="." unique_id=2034294227 instance=ExtResource("4_6leoi")]
-position = Vector2(159, 129)
+position = Vector2(129, -325)
 mask = 2
 
 [node name="Fireball" parent="." unique_id=1367280447 instance=ExtResource("11_2we3d")]
-position = Vector2(323, 63)
+position = Vector2(384, 0)
 
 [node name="Fireball2" parent="." unique_id=1900042662 instance=ExtResource("11_2we3d")]
 position = Vector2(1588, 12)
@@ -110,3 +110,19 @@ position = Vector2(-192, 128)
 
 [node name="Spikes5" parent="." unique_id=150439342 instance=ExtResource("2_b47vy")]
 position = Vector2(-128, 128)
+
+[node name="Platform" parent="." unique_id=1316275024 instance=ExtResource("1_56qw4")]
+position = Vector2(129, -32)
+size = Vector2(128, 32)
+
+[node name="Platform4" parent="." unique_id=724010755 instance=ExtResource("1_56qw4")]
+position = Vector2(129, -161)
+collision_layer = 2
+platform_type = 1
+size = Vector2(128, 32)
+
+[node name="Platform5" parent="." unique_id=1392188707 instance=ExtResource("1_56qw4")]
+position = Vector2(128, -288)
+collision_layer = 2
+platform_type = 1
+size = Vector2(128, 32)
