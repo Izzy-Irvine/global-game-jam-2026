@@ -26,16 +26,22 @@ func pickup_mask(new_mask: Types.Mask):
 func save_object_state(object, state):
 	game_state.object_states[object] = state
 
+func get_object_state(object, key):
+	return game_state.object_states[object][key]
+
 func death():
 	print("You died!")
 	print("Reloading state: " + str(saved_checkpoint.object_states))
 	game_state = saved_checkpoint.copy()
 	reload_state.emit()
+	change_mask(game_state.current_mask)
 	
 func save_checkpoint():
 	print("Saving state: " + str(game_state.object_states))
 	saved_checkpoint = game_state.copy()
 
+
+# Save initial save of the game after first frame is complete - to allow all objects to set their object state
 func _ready():
 	call_deferred("save_checkpoint")
 

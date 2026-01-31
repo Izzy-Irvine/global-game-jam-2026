@@ -3,16 +3,17 @@
 [ext_resource type="Script" uid="uid://cscs0m18tfhan" path="res://characters/player/character_body_2d.gd" id="1_508ok"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b886q"]
-size = Vector2(54, 112)
+size = Vector2(47, 94)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=459358127]
 script = ExtResource("1_508ok")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=609758955]
-offset_right = 59.0
-offset_bottom = 116.0
+offset_left = -28.0
+offset_top = -100.0
+offset_right = 28.0
 color = Color(0.6666667, 0.6666667, 0.6666667, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=396882444]
-position = Vector2(29, 60)
+position = Vector2(0.5, -47)
 shape = SubResource("RectangleShape2D_b886q")

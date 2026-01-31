@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv0sl7gvjx5fx"
-path="res://.godot/imported/Red.png-239fce5a3b86e8e9b174c8b796eb4877.ctex"
+uid="uid://ce6kk5m7fq6k6"
+path="res://.godot/imported/NONE_Bottom_Left.png-f3c37bd1acea1b95a274e8c3915e9d0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Masks/Red.png"
-dest_files=["res://.godot/imported/Red.png-239fce5a3b86e8e9b174c8b796eb4877.ctex"]
+source_file="res://sprites/Stone/NONE/NONE_Bottom_Left.png"
+dest_files=["res://.godot/imported/NONE_Bottom_Left.png-f3c37bd1acea1b95a274e8c3915e9d0b.ctex"]
 
 [params]
 
