@@ -12,3 +12,7 @@ func _ready():
 	ground.tile_set_resource = GroundTileSetResource  # Assign resource here
 	ground.grid_size = Vector2i(20, 10)
 	add_child(ground)
+	GameManager.died.connect(_update_death_count)
+
+func _update_death_count(count):
+	$CanvasLayer/DeathCounter.text = "Deaths: %d" % count
