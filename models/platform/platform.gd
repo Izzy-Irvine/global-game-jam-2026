@@ -2,9 +2,9 @@
 extends CharacterBody2D
 
 var TEXTURES = {
-	Types.Mask.NONE: preload("res://sprites/Ground/NONE/NONE_Top_Center.png"),
-	Types.Mask.BLUE: preload("res://sprites/Ground/BLUE/BLUE_Top_Center.png"),
-	Types.Mask.RED: preload("res://sprites/Ground/RED/RED_Top_Center.png")
+	Types.Mask.NONE: preload("res://sprites/Platform/None_Platform_Long.png"),
+	Types.Mask.BLUE: preload("res://sprites/Platform/BLUE_Platform_Long.png"),
+	Types.Mask.RED: preload("res://sprites/Platform/RED_Platform_Long.png")
 }
 
 @export var platform_type := Types.Mask.NONE:
@@ -13,7 +13,7 @@ var TEXTURES = {
 		platform_type = value
 		_update_platform()
 
-@export var size: Vector2 = Vector2(64, 32):
+@export var size: Vector2 = Vector2(64, 16):
 	set(value):
 		size = value
 		_update_platform()

@@ -11,6 +11,7 @@ var is_jumping = false
 var time_in_air = 0
 var bubble_jump = false
 var mushroom_bounce = 0
+var bubble_bounce = 0
 
 @onready var animation = $Animation
 
@@ -59,6 +60,8 @@ func update_mask(mask):
 func jump():
 	velocity.y = JUMP_VELOCITY
 	is_jumping = true
+	if bubble_jump:
+		bubble_bounce = 1
 	bubble_jump = false
 	mushroom_bounce = 0
 
@@ -70,6 +73,7 @@ func _physics_process(delta: float) -> void:
 		time_in_air = 0
 		if mushroom_bounce > 1.5: # some safe guarding so you immediately aren't on the floor when you hit the mushroom
 			mushroom_bounce = 0
+		bubble_bounce = 0
 	else:
 		time_in_air += delta
 		velocity.y += GRAVITY * delta
@@ -81,13 +85,18 @@ func _physics_process(delta: float) -> void:
 			jump()
 		
 		jump_held_duration = 0
-	elif Input.is_action_pressed("jump") or mushroom_bounce:
+	elif Input.is_action_pressed("jump") or mushroom_bounce > 0 or bubble_bounce > 0:
 		jump_held_duration += delta
 		if mushroom_bounce > 0:
 			mushroom_bounce += delta
+		if bubble_bounce > 0:
+			bubble_bounce += delta
 		if jump_held_duration < 0.25 and is_jumping:
 			var extra_bounce = -600 if mushroom_bounce else 0
 			velocity.y = JUMP_VELOCITY + jump_held_duration * JUMP_VELOCITY + extra_bounce
+		else:
+			mushroom_bounce = 0
+			bubble_bounce = 0
 	else:
 		jump_held_duration = 0
 		is_jumping = false

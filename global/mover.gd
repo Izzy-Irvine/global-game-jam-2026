@@ -1,12 +1,12 @@
 # @tool
 extends Node2D
 
-@export var move_x_amplitude := 0
-@export var move_x_speed := 1
+@export var move_x_amplitude := 0.0
+@export var move_x_speed := 1.0
 @export_range(-1.0, 1.0, 0.01) var move_x_offset := 0.0
 
-@export var move_y_amplitude := 0
-@export var move_y_speed := 1
+@export var move_y_amplitude := 0.0
+@export var move_y_speed := 1.0
 @export_range(-1.0, 1.0, 0.01) var move_y_offset := 0.0
 
 var time = 0
