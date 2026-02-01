@@ -126,6 +126,9 @@ size = Vector2(128, 16)
 [node name="bubble" parent="." unique_id=1436452658 instance=ExtResource("12_1m6oy")]
 position = Vector2(128, -409)
 
+[node name="bubble" parent="bubble" unique_id=1191703787 instance=ExtResource("12_1m6oy")]
+position = Vector2(352, 212)
+
 [node name="Wall" parent="." unique_id=161491479 instance=ExtResource("13_dcryx")]
 position = Vector2(448, 128)
 
