@@ -19,10 +19,10 @@
 [ext_resource type="Texture2D" uid="uid://wco5jlmhj03g" path="res://sprites/UI/Normal_outline.png" id="9_qkdtp"]
 [ext_resource type="PackedScene" uid="uid://b6qfv0q07ub8f" path="res://models/bubble/bubble.tscn" id="10_x8s8n"]
 [ext_resource type="PackedScene" uid="uid://davo0c0fdewl3" path="res://models/spikes/spikes.tscn" id="11_ff268"]
-[ext_resource type="Texture2D" uid="uid://2ctihvqx5nhk" path="res://World/Bg_2.png" id="18_668u1"]
-[ext_resource type="Texture2D" uid="uid://c5bjoxvgb7lx0" path="res://World/Bg_4.png" id="18_ij23q"]
-[ext_resource type="Texture2D" uid="uid://de7dq3317t2d7" path="res://World/Bg_3.png" id="18_mbnqy"]
-[ext_resource type="Texture2D" uid="uid://busixggvkrg5a" path="res://World/Bg_1.png" id="18_xycnt"]
+[ext_resource type="Texture2D" uid="uid://eqme2xklv3gb" path="res://World/Bg_2.png" id="18_668u1"]
+[ext_resource type="Texture2D" uid="uid://iy8cyhdfs0xl" path="res://World/Bg_4.png" id="18_ij23q"]
+[ext_resource type="Texture2D" uid="uid://cwhy0wgj45a1s" path="res://World/Bg_3.png" id="18_mbnqy"]
+[ext_resource type="Texture2D" uid="uid://1rwkils5mtmu" path="res://World/Bg_1.png" id="18_xycnt"]
 [ext_resource type="Script" uid="uid://yib7xxfy1fw8" path="res://global/mover.gd" id="24_a82na"]
 [ext_resource type="AudioStream" uid="uid://d1ok43wfspp71" path="res://sounds/music.mp3" id="25_wqhye"]
 
@@ -559,7 +559,6 @@ position = Vector2(125, 5)
 position = Vector2(-256, 128)
 
 [node name="Instructions" type="Node2D" parent="." unique_id=2003694169]
-visible = false
 
 [node name="Label4" type="Label" parent="Instructions" unique_id=1878375061]
 offset_left = 415.0
@@ -590,17 +589,16 @@ offset_bottom = -30.0
 text = "Use WASD or arrow keys to move"
 
 [node name="Background" type="Node2D" parent="." unique_id=356597238]
-visible = false
 
 [node name="SmolCity" type="Parallax2D" parent="Background" unique_id=1353158388]
 z_index = -7
 scroll_scale = Vector2(0.3, 0.3)
 
 [node name="TextureRect" type="TextureRect" parent="Background/SmolCity" unique_id=733706808]
-offset_left = -21360.97
-offset_top = -200.0
-offset_right = 81039.03
-offset_bottom = 568.0
+offset_left = -21355.0
+offset_top = -311.0
+offset_right = 81045.0
+offset_bottom = 1255.0
 scale = Vector2(1.225, 1.225)
 texture = ExtResource("18_xycnt")
 stretch_mode = 1
@@ -639,14 +637,15 @@ z_index = -10
 scroll_scale = Vector2(0.05, 0.05)
 scroll_offset = Vector2(-337, -88)
 
-[node name="TextureRect" type="TextureRect" parent="Background/BigCity" unique_id=1665389378]
+[node name="TextureRect" type="TextureRect" parent="Background/BigCity" unique_id=1286734612]
 offset_left = -21362.0
-offset_top = -200.0
+offset_top = -277.0
 offset_right = 81038.0
-offset_bottom = 568.0
+offset_bottom = 491.0
 scale = Vector2(1.225, 1.225)
 texture = ExtResource("18_mbnqy")
 stretch_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Mover6" type="Node2D" parent="." unique_id=1505943432]
 position = Vector2(-631, -650)
