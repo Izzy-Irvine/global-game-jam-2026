@@ -1,8 +1,9 @@
 extends Area2D
 
-@onready var sprite = $ColorRect
+@onready var sprite = $AnimatedSprite2D
 
 func _ready():
+	sprite.play("default")
 	_set_opacity(Types.Mask.NONE)
 	GameManager.changed_mask.connect(_set_opacity)
 
