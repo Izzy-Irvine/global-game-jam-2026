@@ -80,7 +80,7 @@ float mist(vec2 uv, float time) {
 }
 
 vec4 sample_glow_pixel(sampler2D tex, vec2 uv) {
-	float hdr_threshold = 0.1; // Exagerated, almost everything will glow
+	float hdr_threshold = 0.4; // Exagerated, almost everything will glow
 	return max(textureLod(tex, uv, 2.0) - hdr_threshold, vec4(0.0));
 }
 
