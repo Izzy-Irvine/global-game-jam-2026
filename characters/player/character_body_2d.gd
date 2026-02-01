@@ -21,21 +21,21 @@ const MASK_COLOURS = {
 	Types.Mask.RED: "#ff0000"
 }
 
+var DEATH_SOUNDS = [load("res://sounds/death1.wav"), load("res://sounds/death2.wav")]#, load("res://sounds/fall_death1.wav"), load("res://sounds/fall_death2.wav")]
+
 func save_state():
 	GameManager.save_object_state(get_instance_id(), {
 		"position": position
 	})
 
 func _ready():
-	GameManager.changed_mask.connect(_on_mask_changed)
+	GameManager.changed_mask.connect(update_mask)
 	GameManager.reload_state.connect(_on_reload_state)
+	GameManager.died.connect(_on_death)
 	
 	collision_mask = Types.OBJECTS_LAYER
 	
 	save_state()
-	
-func _on_mask_changed(mask):
-	update_mask(mask)
 
 func _on_reload_state():
 	var state = GameManager.game_state
@@ -55,6 +55,7 @@ func update_mask(mask):
 		Types.Mask.RED:
 			collision_mask = Types.OBJECTS_LAYER | Types.RED_OBJECT_LAYER
 			collision_layer = Types.PLAYER_LAYER | Types.RED_PLAYER_LAYER
+	$ChangeMask.play()
 
 
 func jump():
@@ -64,6 +65,8 @@ func jump():
 		bubble_bounce = 1
 	bubble_jump = false
 	mushroom_bounce = 0
+	$Jump.pitch_scale = randf_range(0.9, 1.3)
+	$Jump.play()
 
 func _physics_process(delta: float) -> void:
 	if (is_on_floor() or bubble_jump) and jump_held_duration < 0.1 and jump_held_duration > 0 and not is_jumping:
@@ -123,7 +126,10 @@ func _physics_process(delta: float) -> void:
 			facing_direction = "left"
 		else:
 			facing_direction = "right"
-			
+		
+		if not $Walk.playing and is_on_floor():
+			$Walk.pitch_scale = randf_range(0.9, 1.2)
+			$Walk.play()
 		animation.play("walk_" + facing_direction + "_" + mask_name)
 	else:
 		if velocity.x > 0:
@@ -140,3 +146,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	save_state()
+
+func _on_death(count):
+	$Death.stream = DEATH_SOUNDS[randi_range(0, len(DEATH_SOUNDS) - 1)]
+	$Death.play()

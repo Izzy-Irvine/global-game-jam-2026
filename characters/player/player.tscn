@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://ci76gykpoiq7v" path="res://sprites/Character/blue spritesheet.png" id="2_exd8k"]
 [ext_resource type="Texture2D" uid="uid://blibfv2sfmquq" path="res://sprites/Character/Normal_Spritesheet.png" id="2_xxgcw"]
 [ext_resource type="Texture2D" uid="uid://6od2pr6vdc5c" path="res://sprites/Character/Red_Spritesheet.png" id="4_5dc8e"]
+[ext_resource type="AudioStream" uid="uid://cewidb4mj3gtr" path="res://sounds/jump.wav" id="5_ixbpm"]
+[ext_resource type="AudioStream" uid="uid://bs2qyjtk0lnau" path="res://sounds/walk1.wav" id="6_c6leb"]
+[ext_resource type="AudioStream" uid="uid://dyl1w3rnhusuj" path="res://sounds/change_mask.wav" id="7_dirf7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_58jvb"]
 atlas = ExtResource("2_exd8k")
@@ -366,3 +369,14 @@ animation = &"walk_right_red"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=396882444]
 position = Vector2(0, -42.5)
 shape = SubResource("RectangleShape2D_b886q")
+
+[node name="Jump" type="AudioStreamPlayer" parent="." unique_id=1151351090]
+stream = ExtResource("5_ixbpm")
+
+[node name="Death" type="AudioStreamPlayer" parent="." unique_id=1243488994]
+
+[node name="Walk" type="AudioStreamPlayer" parent="." unique_id=40135019]
+stream = ExtResource("6_c6leb")
+
+[node name="ChangeMask" type="AudioStreamPlayer" parent="." unique_id=1305093489]
+stream = ExtResource("7_dirf7")

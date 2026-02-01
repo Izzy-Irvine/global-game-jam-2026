@@ -26,3 +26,4 @@ func _on_body_entered(body: Node2D) -> void:
 		animation.play("activated")
 		_save_state()
 		GameManager.save_checkpoint()
+		$AudioStreamPlayer.play()
