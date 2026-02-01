@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://de7dq3317t2d7" path="res://World/Bg_3.png" id="18_mbnqy"]
 [ext_resource type="Texture2D" uid="uid://busixggvkrg5a" path="res://World/Bg_1.png" id="18_xycnt"]
 [ext_resource type="Script" uid="uid://yib7xxfy1fw8" path="res://global/mover.gd" id="24_a82na"]
+[ext_resource type="AudioStream" uid="uid://d1ok43wfspp71" path="res://sounds/music.mp3" id="25_wqhye"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ficj5"]
 shader = ExtResource("7_1y5gp")
@@ -653,3 +654,9 @@ collision_layer = 2
 motion_mode = 1
 platform_type = 1
 size = Vector2(128, 16)
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1651996068]
+stream = ExtResource("25_wqhye")
+volume_db = -7.401
+autoplay = true
+parameters/looping = true
