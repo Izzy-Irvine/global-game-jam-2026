@@ -1511,6 +1511,9 @@ position = Vector2(-2403, 1152)
 [node name="Mushroom5" parent="Node2D10" unique_id=1040157359 instance=ExtResource("27_ov7q6")]
 position = Vector2(-2080, 831)
 
+[node name="Spikes17" parent="Node2D10" unique_id=1032046346 instance=ExtResource("11_ff268")]
+position = Vector2(-1792, -320)
+
 [node name="Wall" parent="." unique_id=161491479 instance=ExtResource("26_doq0s")]
 position = Vector2(6400, 2624)
 collision_layer = 4
