@@ -149,16 +149,31 @@ position = Vector2(8627, 2176)
 mask = 2
 
 [node name="Platform3" parent="." unique_id=971260219 instance=ExtResource("7_jeusi")]
-position = Vector2(6144, 2144)
+position = Vector2(6176, 2144)
 collision_layer = 4
 platform_type = 2
-size = Vector2(128, 32)
+size = Vector2(96, 32)
+
+[node name="Platform4" parent="." unique_id=721922782 instance=ExtResource("7_jeusi")]
+position = Vector2(5920, 2016)
+collision_layer = 4
+platform_type = 2
+size = Vector2(32, 32)
+
+[node name="Node2D4" type="Node2D" parent="." unique_id=870878977]
+position = Vector2(5920, 2016)
+script = ExtResource("9_r1bhj")
+move_x_speed = 1.5
+move_y_speed = 1.5
+move_y_offset = 0.5
+
+[node name="Fireball" parent="Node2D4" unique_id=1367280447 instance=ExtResource("10_n5wt2")]
 
 [node name="Node2D3" type="Node2D" parent="." unique_id=1630122880]
 position = Vector2(7262.163, 2336)
 scale = Vector2(2, 2)
 script = ExtResource("9_r1bhj")
-move_x_amplitude = 128
+move_x_amplitude = 128.0
 move_x_offset = 1.0
 
 [node name="Platform" parent="Node2D3" unique_id=241990872 instance=ExtResource("7_jeusi")]
@@ -177,8 +192,7 @@ size = Vector2(192, 32)
 [node name="Node2D" type="Node2D" parent="." unique_id=1089917450]
 position = Vector2(-49.695076, 173.82538)
 script = ExtResource("9_r1bhj")
-move_y_amplitude = 128
-move_y_speed = 2
+move_y_amplitude = 64.0
 
 [node name="Fireball" parent="Node2D" unique_id=1969432074 instance=ExtResource("10_n5wt2")]
 position = Vector2(7985.6953, 2002.1746)
@@ -186,19 +200,17 @@ position = Vector2(7985.6953, 2002.1746)
 [node name="Node2D2" type="Node2D" parent="." unique_id=1263634217]
 position = Vector2(-99.39014, -35.31337)
 script = ExtResource("9_r1bhj")
-move_y_amplitude = 64
-move_y_speed = 2
+move_y_amplitude = 64.0
 move_y_offset = 0.5
 
-[node name="Fireball" parent="Node2D2" unique_id=1367280447 instance=ExtResource("10_n5wt2")]
+[node name="Fireball" parent="Node2D2" unique_id=331668562 instance=ExtResource("10_n5wt2")]
 position = Vector2(7843.39, 2211.3135)
 
 [node name="mover" type="Node2D" parent="." unique_id=707035215]
 position = Vector2(7074.617, 2336)
 scale = Vector2(2, 2)
 script = ExtResource("9_r1bhj")
-move_x_amplitude = 64
-move_y_speed = 0
+move_x_amplitude = 128.0
 
 [node name="Platform" parent="mover" unique_id=449874189 instance=ExtResource("7_jeusi")]
 position = Vector2(142.6914, 0)

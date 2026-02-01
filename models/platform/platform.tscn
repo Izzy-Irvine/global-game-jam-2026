@@ -1,24 +1,25 @@
 [gd_scene format=3 uid="uid://dqaj8q0uipms3"]
 
 [ext_resource type="Script" uid="uid://dtmvmy6rbdlel" path="res://models/platform/platform.gd" id="1_7ibc5"]
-[ext_resource type="Texture2D" uid="uid://b5piqeco0xgu7" path="res://sprites/Ground/NONE/NONE_Top_Center.png" id="2_osfsy"]
+[ext_resource type="Texture2D" uid="uid://bn8xavr26a7gt" path="res://sprites/Platform/None_Platform_Long.png" id="2_osfsy"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ibc5"]
-size = Vector2(64, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dr0ox"]
+size = Vector2(64, 16)
 
 [node name="Platform" type="CharacterBody2D" unique_id=353121591]
 scale = Vector2(2, 2)
 collision_mask = 8
 script = ExtResource("1_7ibc5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=712743159]
-shape = SubResource("RectangleShape2D_7ibc5")
-one_way_collision = true
+size = Vector2(64, 32)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2098320726]
 offset_left = -32.0
-offset_top = -16.0
+offset_top = -8.0
 offset_right = 32.0
-offset_bottom = 16.0
+offset_bottom = 8.0
 texture = ExtResource("2_osfsy")
 stretch_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=712743159]
+shape = SubResource("RectangleShape2D_dr0ox")
+one_way_collision = true
