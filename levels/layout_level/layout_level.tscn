@@ -1980,3 +1980,9 @@ position = Vector2(-1792, 490)
 collision_layer = 4
 platform_type = 2
 size = Vector2(256, 16)
+
+[node name="Platform11" parent="." unique_id=319468572 instance=ExtResource("9_7vtxx")]
+position = Vector2(-1792, 336)
+collision_layer = 4
+platform_type = 2
+size = Vector2(256, 16)
