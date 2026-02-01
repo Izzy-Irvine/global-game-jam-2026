@@ -1,24 +1,46 @@
 [gd_scene format=3 uid="uid://b6qfv0q07ub8f"]
 
 [ext_resource type="Script" uid="uid://b001ioyncquey" path="res://models/bubble/bubble.gd" id="1_4flh1"]
+[ext_resource type="Texture2D" uid="uid://cx0nnhi2o6pg4" path="res://sprites/Bubble/Bubble_1.png" id="2_y2cyl"]
+[ext_resource type="Texture2D" uid="uid://cdgoor42hr641" path="res://sprites/Bubble/Bubble_2.png" id="3_eto8y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7sxgh"]
 radius = 28.01785
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vh6qd"]
+atlas = ExtResource("2_y2cyl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dk07t"]
+atlas = ExtResource("3_eto8y")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xjr5k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vh6qd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dk07t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [node name="bubble" type="Area2D" unique_id=1436452658]
 collision_layer = 2
 collision_mask = 16
 script = ExtResource("1_4flh1")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=261537360]
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-color = Color(0, 1, 1, 1)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2099654704]
 shape = SubResource("CircleShape2D_7sxgh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2019254112]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_xjr5k")
+frame_progress = 0.3430165
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
