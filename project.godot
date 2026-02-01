@@ -10,10 +10,13 @@ config_version=5
 
 [application]
 
-config/name="Game Jam 2026"
+config/name="One man, two masks"
 run/main_scene="uid://dmpv24hkvmudr"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.50980395, 0.654902, 0.80784315, 1)
+boot_splash/use_filter=false
+boot_splash/image="uid://cdxujgku8wi4g"
+config/icon="uid://bcx5r38gtnmfe"
 
 [autoload]
 
