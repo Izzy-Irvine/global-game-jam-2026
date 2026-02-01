@@ -76,8 +76,6 @@ func _physics_process(delta: float) -> void:
 		if velocity.y < TERMINAL_VELOCITY:
 			velocity.y = TERMINAL_VELOCITY 
 	
-	print("mushroom bounce: " + str(mushroom_bounce))
-	
 	if Input.is_action_just_pressed("jump") and not is_jumping:
 		if time_in_air < 0.1:
 			jump()
@@ -88,7 +86,7 @@ func _physics_process(delta: float) -> void:
 		if mushroom_bounce > 0:
 			mushroom_bounce += delta
 		if jump_held_duration < 0.25 and is_jumping:
-			var extra_bounce = -400 if mushroom_bounce else 0
+			var extra_bounce = -600 if mushroom_bounce else 0
 			velocity.y = JUMP_VELOCITY + jump_held_duration * JUMP_VELOCITY + extra_bounce
 	else:
 		jump_held_duration = 0

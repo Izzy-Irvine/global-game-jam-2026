@@ -13,7 +13,7 @@ func _set_opacity(mask):
 		sprite.modulate = Color(1,1,1,0.1)
 
 func _on_body_entered(body):
-	body.velocity.y = -950
+	body.velocity.y = -1100
 	body.is_jumping = true
 	body.jump_held_duration = 0
 	body.mushroom_bounce = 1
