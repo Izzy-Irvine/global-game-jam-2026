@@ -52,9 +52,8 @@ drag_bottom_margin = 0.1
 position = Vector2(-256, 128)
 
 [node name="Mover" type="Node2D" parent="." unique_id=530286504]
-position = Vector2(349.67136, 0)
+position = Vector2(307.9936, 0)
 script = ExtResource("5_um7ct")
-move_x_amplitude = 68
 
 [node name="Platform" parent="Mover" unique_id=156594794 instance=ExtResource("1_56qw4")]
 position = Vector2(547.926, -160)
@@ -115,14 +114,14 @@ position = Vector2(-192, 128)
 position = Vector2(-128, 128)
 
 [node name="Platform" parent="." unique_id=1316275024 instance=ExtResource("1_56qw4")]
-position = Vector2(128, -32)
-size = Vector2(128, 32)
+position = Vector2(128, -48)
+size = Vector2(128, 16)
 
 [node name="Platform4" parent="." unique_id=724010755 instance=ExtResource("1_56qw4")]
-position = Vector2(128, -224)
+position = Vector2(128, -240)
 collision_layer = 2
 platform_type = 1
-size = Vector2(128, 32)
+size = Vector2(128, 16)
 
 [node name="bubble" parent="." unique_id=1436452658 instance=ExtResource("12_1m6oy")]
 position = Vector2(128, -409)

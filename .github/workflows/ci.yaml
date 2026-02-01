@@ -6,6 +6,8 @@ on:
 
 jobs:
   export-web:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -29,3 +31,9 @@ jobs:
         with:
           name: web
           path: export
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: export
