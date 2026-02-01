@@ -1,4 +1,4 @@
-@tool
+# @tool
 extends Node2D
 
 @export var move_x_amplitude := 0
@@ -17,5 +17,5 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	time += delta
-	position.x = base_position.x + sin((time + move_x_offset) * move_x_speed) * move_x_amplitude
-	position.y = base_position.y + sin((time + move_y_offset) * move_y_speed) * move_y_amplitude
+	position.x = base_position.x + sin((time + move_x_offset * PI) * move_x_speed) * move_x_amplitude
+	position.y = base_position.y + sin((time + move_y_offset * PI) * move_y_speed) * move_y_amplitude

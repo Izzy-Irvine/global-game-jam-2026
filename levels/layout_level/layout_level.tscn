@@ -231,6 +231,7 @@ offset_top = -5981.792
 offset_right = 10260.0
 offset_bottom = 4409.208
 script = ExtResource("7_aniky")
+metadata/_edit_use_anchors_ = true
 
 [node name="Platform2" parent="." unique_id=1316275024 instance=ExtResource("9_7vtxx")]
 position = Vector2(714, 167)
