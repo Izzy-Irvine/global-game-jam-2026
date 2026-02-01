@@ -5,9 +5,9 @@
 [ext_resource type="Script" uid="uid://b32lwepbwtb10" path="res://tools/ground_tile_map.gd" id="3_c0gnr"]
 [ext_resource type="Script" uid="uid://c4r5ca16fd3th" path="res://tools/ground_tile_set.gd" id="4_ficj5"]
 [ext_resource type="PackedScene" uid="uid://bntq3mab78kup" path="res://models/mask/mask.tscn" id="6_ficj5"]
-[ext_resource type="Shader" uid="uid://0ecr0isyenrs" path="res://levels/layout_level/layout_level.gdshader" id="7_1y5gp"]
-[ext_resource type="Shader" uid="uid://qcmy5f6pcej6" path="res://levels/layout_level/PostProcess.gdshader" id="7_7vtxx"]
-[ext_resource type="Script" uid="uid://brb415gxaa4db" path="res://levels/layout_level/screen_effect.gd" id="7_aniky"]
+[ext_resource type="Shader" path="res://levels/layout_level/layout_level.gdshader" id="7_1y5gp"]
+[ext_resource type="Shader" path="res://levels/layout_level/PostProcess.gdshader" id="7_7vtxx"]
+[ext_resource type="Script" path="res://levels/layout_level/screen_effect.gd" id="7_aniky"]
 [ext_resource type="PackedScene" uid="uid://dqaj8q0uipms3" path="res://models/platform/platform.tscn" id="9_7vtxx"]
 [ext_resource type="PackedScene" uid="uid://b6qfv0q07ub8f" path="res://models/bubble/bubble.tscn" id="10_x8s8n"]
 
@@ -137,6 +137,7 @@ offset_top = -6015.792
 offset_right = 10255.0
 offset_bottom = 4375.208
 script = ExtResource("7_aniky")
+metadata/_edit_use_anchors_ = true
 
 [node name="Platform2" parent="." unique_id=1316275024 instance=ExtResource("9_7vtxx")]
 position = Vector2(714, 167)
