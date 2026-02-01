@@ -15,4 +15,4 @@ func _ready():
 	GameManager.died.connect(_update_death_count)
 
 func _update_death_count(count):
-	$CanvasLayer/DeathCounter.text = "Deaths: %d" % count
+	$UI/DeathCounter.text = "Deaths: %d" % count

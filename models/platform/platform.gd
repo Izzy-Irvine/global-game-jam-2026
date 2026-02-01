@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 var TEXTURES = {
 	Types.Mask.NONE: preload("res://sprites/Platform/None_Platform_Long.png"),
-	Types.Mask.BLUE: preload("res://sprites/Platform/Blue_Platform_Long.png"),
+	Types.Mask.BLUE: preload("res://sprites/Platform/BLUE_Platform_Long.png"),
 	Types.Mask.RED: preload("res://sprites/Platform/RED_Platform_Long.png")
 }
 
