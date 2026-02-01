@@ -248,3 +248,33 @@ position = Vector2(-4937, -264)
 
 [node name="bubble" parent="." unique_id=94999256 instance=ExtResource("10_x8s8n")]
 position = Vector2(-2594, -221)
+
+[node name="Instructions" type="Node2D" parent="." unique_id=2003694169]
+
+[node name="Label4" type="Label" parent="Instructions" unique_id=1878375061]
+offset_left = 415.0
+offset_top = -19.0
+offset_right = 948.0
+offset_bottom = 16.0
+text = "Some platforms are only usable when you're wearing the right mask"
+
+[node name="Label3" type="Label" parent="Instructions" unique_id=787693822]
+offset_left = -350.0
+offset_top = -120.0
+offset_right = 183.0
+offset_bottom = -85.0
+text = "Collect the masks then use the number keys to switch between them"
+
+[node name="Label2" type="Label" parent="Instructions" unique_id=105606036]
+offset_left = -1841.0
+offset_top = 38.0
+offset_right = -1405.0
+offset_bottom = 73.0
+text = "Use up arrow, space or W to jump"
+
+[node name="Label" type="Label" parent="Instructions" unique_id=596938134]
+offset_left = -2605.0
+offset_top = -65.0
+offset_right = -2169.0
+offset_bottom = -30.0
+text = "Use WASD or arrow keys to move"
