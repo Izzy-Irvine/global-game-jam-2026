@@ -3,12 +3,19 @@
 [ext_resource type="Script" uid="uid://dunwnpe2spjkh" path="res://levels/layout_level/layout_level.gd" id="1_85f11"]
 [ext_resource type="PackedScene" uid="uid://b06f2whwfjsas" path="res://characters/player/player.tscn" id="2_ixulc"]
 [ext_resource type="Script" uid="uid://b32lwepbwtb10" path="res://tools/ground_tile_map.gd" id="3_c0gnr"]
+[ext_resource type="Script" uid="uid://c68ym72eid7v7" path="res://global/mask_ui.gd" id="3_ujh3v"]
 [ext_resource type="Script" uid="uid://c4r5ca16fd3th" path="res://tools/ground_tile_set.gd" id="4_ficj5"]
+[ext_resource type="Texture2D" uid="uid://bm53823ei3gwd" path="res://sprites/UI/Blue_mask.png" id="4_mbnqy"]
+[ext_resource type="Texture2D" uid="uid://dpjwgboiq16ns" path="res://sprites/UI/Blue_outline.png" id="5_ij23q"]
+[ext_resource type="Texture2D" uid="uid://bp03g3b1d0xuq" path="res://sprites/UI/Red_mask.png" id="6_668u1"]
 [ext_resource type="PackedScene" uid="uid://bntq3mab78kup" path="res://models/mask/mask.tscn" id="6_ficj5"]
 [ext_resource type="Shader" uid="uid://0ecr0isyenrs" path="res://levels/layout_level/layout_level.gdshader" id="7_1y5gp"]
 [ext_resource type="Shader" path="res://levels/layout_level/PostProcess.gdshader" id="7_7vtxx"]
 [ext_resource type="Script" path="res://levels/layout_level/screen_effect.gd" id="7_aniky"]
+[ext_resource type="Texture2D" uid="uid://c47cmlj4penib" path="res://sprites/UI/Red_outline.png" id="7_xycnt"]
+[ext_resource type="Texture2D" uid="uid://bcx5r38gtnmfe" path="res://sprites/UI/Normal_head.png" id="8_wxcr8"]
 [ext_resource type="PackedScene" uid="uid://dqaj8q0uipms3" path="res://models/platform/platform.tscn" id="9_7vtxx"]
+[ext_resource type="Texture2D" uid="uid://wco5jlmhj03g" path="res://sprites/UI/Normal_outline.png" id="9_qkdtp"]
 [ext_resource type="PackedScene" uid="uid://b6qfv0q07ub8f" path="res://models/bubble/bubble.tscn" id="10_x8s8n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ficj5"]
@@ -40,6 +47,93 @@ shader_parameter/time_offset = 0.0
 position = Vector2(11, 90)
 script = ExtResource("1_85f11")
 
+[node name="UI" type="CanvasLayer" parent="." unique_id=173906669]
+layer = 7
+
+[node name="DeathCounter" type="Label" parent="UI" unique_id=1593978495]
+z_index = 100
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 208.0
+offset_bottom = 107.0
+text = "Deaths: 0"
+
+[node name="NoneMask" type="Node2D" parent="UI" unique_id=294321874]
+position = Vector2(0, 32)
+scale = Vector2(2, 2)
+script = ExtResource("3_ujh3v")
+
+[node name="Mask" type="TextureRect" parent="UI/NoneMask" unique_id=1990789239]
+z_index = 100
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("8_wxcr8")
+
+[node name="Outline" type="TextureRect" parent="UI/NoneMask" unique_id=911594548]
+z_index = 100
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("9_qkdtp")
+
+[node name="Label" type="Label" parent="UI/NoneMask" unique_id=490057140]
+offset_left = 31.985
+offset_top = 7.95
+offset_right = 41.985
+offset_bottom = 30.95
+text = "1"
+
+[node name="BlueMask" type="Node2D" parent="UI" unique_id=738578026]
+z_index = 100
+position = Vector2(0, 96)
+scale = Vector2(2, 2)
+script = ExtResource("3_ujh3v")
+mask_type = 1
+
+[node name="Mask" type="TextureRect" parent="UI/BlueMask" unique_id=2073227674]
+z_index = 100
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_mbnqy")
+
+[node name="Outline" type="TextureRect" parent="UI/BlueMask" unique_id=1637305533]
+z_index = 100
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_ij23q")
+
+[node name="Label" type="Label" parent="UI/BlueMask" unique_id=1319233948]
+offset_left = 31.985
+offset_top = 5.0
+offset_right = 41.985004
+offset_bottom = 28.0
+text = "2"
+
+[node name="RedMask" type="Node2D" parent="UI" unique_id=825327017]
+z_index = 100
+position = Vector2(0, 150)
+scale = Vector2(2, 2)
+script = ExtResource("3_ujh3v")
+mask_type = 2
+
+[node name="Mask" type="TextureRect" parent="UI/RedMask" unique_id=456940455]
+z_index = 100
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_668u1")
+
+[node name="Outline" type="TextureRect" parent="UI/RedMask" unique_id=457614507]
+z_index = 100
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_xycnt")
+
+[node name="Label" type="Label" parent="UI/RedMask" unique_id=1882488208]
+offset_left = 31.985
+offset_top = 5.0
+offset_right = 41.985004
+offset_bottom = 28.0
+text = "3"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=412613166]
 layer = -1
 
@@ -53,13 +147,6 @@ offset_top = -5758.0
 offset_right = 9710.0
 offset_bottom = 4517.0
 texture = SubResource("CanvasTexture_1y5gp")
-
-[node name="DeathCounter" type="Label" parent="CanvasLayer" unique_id=1593978495]
-offset_left = 8.0
-offset_top = 7.0
-offset_right = 208.0
-offset_bottom = 107.0
-text = "Deaths: 0"
 
 [node name="Player" parent="." unique_id=459358127 instance=ExtResource("2_ixulc")]
 z_index = 10
@@ -139,10 +226,10 @@ material = SubResource("ShaderMaterial_x8s8n")
 anchors_preset = -1
 anchor_top = 0.044000003
 anchor_bottom = 0.044000003
-offset_left = -3901.0
-offset_top = -6015.792
-offset_right = 10255.0
-offset_bottom = 4375.208
+offset_left = -3896.0
+offset_top = -5981.792
+offset_right = 10260.0
+offset_bottom = 4409.208
 script = ExtResource("7_aniky")
 
 [node name="Platform2" parent="." unique_id=1316275024 instance=ExtResource("9_7vtxx")]
